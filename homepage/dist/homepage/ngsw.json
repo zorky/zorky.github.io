@@ -1,7 +1,7 @@
 {
   "configVersion": 1,
-  "timestamp": 1619715296874,
-  "index": "https://zorky.github.io/homepage/index.html",
+  "timestamp": 1619715568049,
+  "index": "https://zorky.github.io/homepage/dist/homepage/index.html",
   "assetGroups": [
     {
       "name": "app",
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://zorky.github.io/homepage/favicon.ico",
-        "https://zorky.github.io/homepage/index.html",
-        "https://zorky.github.io/homepage/main.8e5d6c5ae6f983682d2c.js",
-        "https://zorky.github.io/homepage/manifest.webmanifest",
-        "https://zorky.github.io/homepage/polyfills.bf99d438b005d57b2b31.js",
-        "https://zorky.github.io/homepage/runtime.359d5ee4682f20e936e9.js",
-        "https://zorky.github.io/homepage/styles.875d8c3f7533d2e3f8e5.css"
+        "https://zorky.github.io/homepage/dist/homepage/favicon.ico",
+        "https://zorky.github.io/homepage/dist/homepage/index.html",
+        "https://zorky.github.io/homepage/dist/homepage/main.8e5d6c5ae6f983682d2c.js",
+        "https://zorky.github.io/homepage/dist/homepage/manifest.webmanifest",
+        "https://zorky.github.io/homepage/dist/homepage/polyfills.bf99d438b005d57b2b31.js",
+        "https://zorky.github.io/homepage/dist/homepage/runtime.359d5ee4682f20e936e9.js",
+        "https://zorky.github.io/homepage/dist/homepage/styles.875d8c3f7533d2e3f8e5.css"
       ],
       "patterns": []
     },
@@ -29,35 +29,35 @@
         "ignoreVary": true
       },
       "urls": [
-        "https://zorky.github.io/homepage/assets/icons/icon-128x128.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-144x144.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-152x152.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-192x192.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-384x384.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-512x512.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-72x72.png",
-        "https://zorky.github.io/homepage/assets/icons/icon-96x96.png"
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-128x128.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-144x144.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-152x152.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-192x192.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-384x384.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-512x512.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-72x72.png",
+        "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-96x96.png"
       ],
       "patterns": []
     }
   ],
   "dataGroups": [],
   "hashTable": {
-    "https://zorky.github.io/homepage/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
-    "https://zorky.github.io/homepage/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
-    "https://zorky.github.io/homepage/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
-    "https://zorky.github.io/homepage/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
-    "https://zorky.github.io/homepage/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
-    "https://zorky.github.io/homepage/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
-    "https://zorky.github.io/homepage/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
-    "https://zorky.github.io/homepage/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "https://zorky.github.io/homepage/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://zorky.github.io/homepage/index.html": "35298520cbbecf753467e160c41f2534b99136e4",
-    "https://zorky.github.io/homepage/main.8e5d6c5ae6f983682d2c.js": "bac278d0a9dba359761046224d060d60a8a8c773",
-    "https://zorky.github.io/homepage/manifest.webmanifest": "d070cf1e7320358ae9d3cecefa6bc1acaf3f5934",
-    "https://zorky.github.io/homepage/polyfills.bf99d438b005d57b2b31.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
-    "https://zorky.github.io/homepage/runtime.359d5ee4682f20e936e9.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
-    "https://zorky.github.io/homepage/styles.875d8c3f7533d2e3f8e5.css": "f1d7d8d1bdaf819a402f08d2ffbd4e14be2bfc59"
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://zorky.github.io/homepage/dist/homepage/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://zorky.github.io/homepage/dist/homepage/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://zorky.github.io/homepage/dist/homepage/index.html": "70004c5beb72652eef86e2fd6546b4bfaf188cf6",
+    "https://zorky.github.io/homepage/dist/homepage/main.8e5d6c5ae6f983682d2c.js": "bac278d0a9dba359761046224d060d60a8a8c773",
+    "https://zorky.github.io/homepage/dist/homepage/manifest.webmanifest": "d070cf1e7320358ae9d3cecefa6bc1acaf3f5934",
+    "https://zorky.github.io/homepage/dist/homepage/polyfills.bf99d438b005d57b2b31.js": "763cd3b34dfa4600ebb9d9588ec7116988e98920",
+    "https://zorky.github.io/homepage/dist/homepage/runtime.359d5ee4682f20e936e9.js": "a9aafcf49f49145093fc831efd9b8e2f6c71bb9c",
+    "https://zorky.github.io/homepage/dist/homepage/styles.875d8c3f7533d2e3f8e5.css": "f1d7d8d1bdaf819a402f08d2ffbd4e14be2bfc59"
   },
   "navigationUrls": [
     {
