@@ -1,3 +1,7 @@
+# ng build pour https://zorky.github.io/homepage/dist/homepage/
+
+$ ng build --prod --baseHref="https://zorky.github.io/homepage/dist/homepage/"
+
 # Homepage
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.

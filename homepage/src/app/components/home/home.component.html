@@ -1,0 +1,10 @@
+<!-- <app-dashboard></app-dashboard> -->
+<div>
+  <mat-card class="mat-elevation-z2">
+    <mat-card-content>
+      <div *ngFor="let link of links" fxFlex="50" fxLayoutGap="10px">
+        <app-link [link]="link"></app-link>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

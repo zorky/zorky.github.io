@@ -7,10 +7,5 @@ import {LinkModel} from './link/link.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Olivier Duval';
-  links: LinkModel[] = [
-    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/oduval/' },
-    { label: 'Twitter', url: 'https://twitter.com/zorky'},
-    { label: 'Devto', url: 'https://dev.to/zorky'}
-    ];
+
 }

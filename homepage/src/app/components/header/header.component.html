@@ -1,0 +1,24 @@
+<mat-toolbar class="mat-elevation-z6" color="primary" fxLayoutAlign="{{layout}}">
+  <span><a [routerLink]="['/']">Olivier Duval</a></span>
+  <mat-icon>account_balance</mat-icon>
+  <button mat-button [matMenuTriggerFor]="libraryMenu">
+    <mat-divider [vertical]="true"></mat-divider>
+  </button>
+  <!--  -->
+  <!-- menu principal -->
+  <mat-menu #libraryMenu="matMenu" xPosition="before">
+    <mat-divider [vertical]="true"></mat-divider>
+  </mat-menu>
+  <!-- menu authentification -->
+  <mat-menu #authent="matMenu">
+
+  </mat-menu>
+  <!-- menu livres -->
+  <mat-menu #booksMenu="matMenu">
+
+  </mat-menu>
+  <!-- menu auteurs -->
+  <mat-menu #authorMenu="matMenu">
+
+  </mat-menu>
+</mat-toolbar>
