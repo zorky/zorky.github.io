@@ -12,7 +12,7 @@ const companies = [
 ];
 
 const specialities = {
-    full: ["Angular/Material", "Typescript/Javascript", "Django DRF/Python"]
+    full: ["Angular/Material", "Typescript/Javascript", "Django DRF/Python", "Scrum"]
 };
 
 function getUser() {
