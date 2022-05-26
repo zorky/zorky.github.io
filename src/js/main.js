@@ -1,28 +1,22 @@
-var positions = [
-    { id: "full", male: "CP tech & Développeur fullstack", female: "Développeuse fullstack"},
-    /* { id: "front",male: "Développeur front-end", female: "Développeuse front-end"},
-    { id: "back",male: "Développeur back-end", female: "Développeuse back-end"},
-    { id: "embedded",male: "Développeur embarqué", female: "Développeuse embarqué"} */
+const positions = [
+    {id: "full", male: "CP tech & Développeur fullstack", female: "Développeuse fullstack"}
 ];
 
-var companies = [
-    "Trello",
-    "Blablacar",
-    "Microsoft",
-    "Klassroom",
-    "Citya",
-    "Qwant"
-]
+const companies = [
+    "Paris 8",
+    "BusinessLine",
+    "Edenred",
+    "France Billet",
+    "CCI France",
+    "Alegria"
+];
 
-var specialities =  {
-    full: ["Angular/Material", "Typescript/Javascript", "Django DRF/Python"],
-    front: ["React/Tailwind", "Vue/Material", "Angular/Bootstrap"],
-    back: ["NodeJS/Express", "Python/Django"],
-    embedded: ["Arduino/C++"]
-}
+const specialities = {
+    full: ["Angular/Material", "Typescript/Javascript", "Django DRF/Python"]
+};
 
 function getUser() {
-    const user = {
+    return {
         gender: 'male',
         name: {
             first: 'Olivier',
@@ -30,9 +24,9 @@ function getUser() {
         },
         email: 'od+github@duval.dev',
         picture: {
-            large: 'https://zorky.github.io/john-doe/src/img/1516303331313.jpg',
-            medium: 'https://zorky.github.io/john-doe/src/img/1516303331313.jpg',
-            thumbnail: 'https://zorky.github.io/john-doe/src/img/1516303331313.jpg'
+            large: 'https://zorky.github.io/src/img/1516303331313.jpg',
+            medium: 'https://zorky.github.io/src/img/1516303331313.jpg',
+            thumbnail: 'https://zorky.github.io/src/img/1516303331313.jpg'
         },
         position: {
             'male': 'responsable d\'équipe / CP technique',
@@ -45,20 +39,9 @@ function getUser() {
             country: 'France'
         }
     };
-    return user;
 }
 function init(){
     renderFromUser(getUser());
-    /* fetch('https://randomuser.me/api/?nat=fr')
-    .then(response => response.json())
-    .then(data => {
-        var user = data.results[0];
-        user.position = positions[Math.floor(Math.random() * (positions.length))];
-        user.company = companies[Math.floor(Math.random() * (companies.length * 2))];
-        user.speciality = specialities[user.position.id][Math.floor(Math.random() * (specialities[user.position.id].length))];
-        console.log(user);
-         renderFromUser(user);
-    }); */
 }
 
 function renderFromUser(user) {
