@@ -1,0 +1,3 @@
+[submodule "encapsulation_js"]
+	path = encapsulation_js
+	url = git@github.com:zorky/encapsulation_js.git
