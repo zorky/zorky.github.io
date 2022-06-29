@@ -1,2 +1,0 @@
-# Exemples d'encapsulation JS
-
