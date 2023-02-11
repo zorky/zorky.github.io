@@ -24,9 +24,9 @@ function getUser() {
         },
         email: 'od+github@duval.dev',
         picture: {
-            large: 'https://zorky.github.io/src/img/1516303331313.jpg',
-            medium: 'https://zorky.github.io/src/img/1516303331313.jpg',
-            thumbnail: 'https://zorky.github.io/src/img/1516303331313.jpg'
+            large: 'https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg',
+            medium: 'https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg',
+            thumbnail: 'https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg'
         },
         position: {
             'male': 'responsable d\'équipe / CP technique',
