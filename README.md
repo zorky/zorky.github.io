@@ -1,3 +1,5 @@
+# Crédits
+
 # John Doe
 John Doe is a minimalist personal website template made for developers built using only plain html, css and javascript.
 
