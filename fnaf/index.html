@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Five Nights at Freddy's</title>
+<meta name="description" content="Quiz de fans sur Five Nights at Freddy's : jeux et films, 15 questions par quiz, à jouer ou à projeter.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Lexend:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1a1240; --bg-glow: #33207a; --ink: #fff3dc; --dim: #b8aee0;
+    --magenta: #ff4fa8; --cyan: #42d6e6; --yellow: #ffc93c; --violet: #a58bff; --dark: #160e38;
+    --tile-a: #2d1d70; --tile-b: #1a1240;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { height: 100%; font-size: clamp(14px, 1.2vw, 28px); scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  body {
+    margin: 0; min-height: 100%;
+    background: radial-gradient(120% 80% at 50% 0%, var(--bg-glow), var(--bg) 60%) var(--bg);
+    color: var(--ink); font-family: 'Lexend', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+  .floor {
+    position: fixed; left: -30%; right: -30%; bottom: 0; height: 46%;
+    background: repeating-conic-gradient(var(--tile-a) 0 25%, var(--tile-b) 0 50%) 0 0 / 7rem 7rem;
+    transform: perspective(38rem) rotateX(62deg); transform-origin: 50% 100%;
+    -webkit-mask-image: linear-gradient(to top, #000, transparent 88%);
+            mask-image: linear-gradient(to top, #000, transparent 88%);
+    opacity: .55; pointer-events: none; z-index: 0;
+  }
+  main {
+    position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh;
+    width: 100%; max-width: 56rem; margin-inline: auto;
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 2.5rem 2rem;
+  }
+  h1 {
+    font-family: 'Bungee', Impact, sans-serif; font-weight: 400;
+    font-size: 4.6rem; line-height: .96; margin: 0 0 1.2rem;
+    text-shadow: .07em .07em 0 var(--magenta);
+  }
+  .sub { font-size: 1.5rem; line-height: 1.4; color: var(--dim); margin: 0 0 2.4rem; max-width: 26em; }
+
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  .item { --c: var(--magenta); display: flex; gap: .9rem; align-items: stretch; }
+  .item:nth-child(2) { --c: var(--cyan); }
+  .item:nth-child(3) { --c: var(--yellow); }
+  .item:nth-child(4) { --c: var(--violet); }
+
+  .play {
+    flex: 1; display: flex; align-items: center; gap: 1.2rem;
+    padding: 1.1rem 1.4rem; text-decoration: none; color: var(--ink);
+    border: .2rem solid var(--c); border-radius: .9rem; background: rgba(255,255,255,.05);
+    transition: background .2s, transform .2s;
+  }
+  .play:hover { background: rgba(255,255,255,.11); transform: translateX(.3rem); }
+  .tile {
+    flex: none; width: 3.6rem; height: 3.6rem; display: grid; place-items: center;
+    border-radius: .7rem; background: var(--c); color: var(--dark);
+    font-family: 'Bungee', Impact, sans-serif; font-size: 2rem;
+  }
+  .txt { flex: 1; min-width: 0; }
+  .name { display: block; font-size: 1.55rem; font-weight: 800; margin-bottom: .2rem; }
+  .desc { display: block; font-size: 1.05rem; line-height: 1.35; color: var(--dim); }
+  .go { font-family: 'Bungee', Impact, sans-serif; font-size: 1.2rem; color: var(--c); white-space: nowrap; }
+
+  .pdf {
+    flex: none; display: grid; place-items: center; padding: 0 1.2rem;
+    border-radius: .9rem; border: .2rem solid rgba(255,255,255,.2);
+    color: var(--dim); text-decoration: none; font-weight: 600; font-size: 1rem;
+    transition: color .2s, border-color .2s;
+  }
+  .pdf:hover { color: var(--ink); border-color: var(--ink); }
+  a:focus-visible { outline: .25rem solid var(--cyan); outline-offset: .2rem; }
+
+  .foot { margin: 2.2rem 0 0; font-size: .9rem; color: var(--dim); opacity: .8; max-width: 42em; line-height: 1.5; }
+
+  @media (prefers-reduced-motion: reduce) { .play { transition: none; } .play:hover { transform: none; } }
+  @media (max-width: 700px) {
+    html { font-size: 15px; }
+    main { padding: 1.5rem 1.1rem; }
+    h1 { font-size: 2.9rem; }
+    .sub { font-size: 1.15rem; }
+    .item { flex-wrap: wrap; }
+    .play { flex-basis: 100%; }
+    .pdf { padding: .6rem 1rem; }
+    .go { display: none; }
+  }
+</style>
+</head>
+<body>
+  <div class="floor" aria-hidden="true"></div>
+  <main>
+    <h1>Five Nights<br>at Freddy's</h1>
+    <p class="sub">Quiz de fans sur les jeux et les films. Choisis ta nuit&nbsp;: 15 questions chacune, de minuit à 6 h du matin.</p>
+
+    <!-- Pour ajouter un quiz : copier un bloc <li>, changer le lien, le numéro et les textes,
+         puis créer le dossier quiz-4/ avec son index.html. -->
+    <ul>
+      <li class="item">
+        <a class="play" href="quiz-1/">
+          <span class="tile">1</span>
+          <span class="txt"><span class="name">Première nuit</span>
+            <span class="desc">Les bases : créateur, gardien de nuit, animatroniques et film.</span></span>
+          <span class="go">Jouer</span>
+        </a>
+        <a class="pdf" href="pdf/quiz-fnaf-1.pdf" aria-label="Quiz 1 au format PDF">PDF</a>
+      </li>
+      <li class="item">
+        <a class="play" href="quiz-2/">
+          <span class="tile">2</span>
+          <span class="txt"><span class="name">Deuxième nuit</span>
+            <span class="desc">Plus de jeux, de la réalité virtuelle à Ultimate Custom Night.</span></span>
+          <span class="go">Jouer</span>
+        </a>
+        <a class="pdf" href="pdf/quiz-fnaf-2.pdf" aria-label="Quiz 2 au format PDF">PDF</a>
+      </li>
+      <li class="item">
+        <a class="play" href="quiz-3/">
+          <span class="tile">3</span>
+          <span class="txt"><span class="name">Troisième nuit</span>
+            <span class="desc">Sister Location, Security Breach, spin-offs et film.</span></span>
+          <span class="go">Jouer</span>
+        </a>
+        <a class="pdf" href="pdf/quiz-fnaf-3.pdf" aria-label="Quiz 3 au format PDF">PDF</a>
+      </li>
+    </ul>
+
+    <p class="foot">Les quiz se jouent au clavier (Espace ou flèches) et se projettent en plein écran (touche F). Les PDF sont à imprimer, avec les réponses en gris clair. Quiz de fans, non officiel.</p>
+  </main>
+</body>
+</html>

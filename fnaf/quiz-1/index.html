@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quiz Five Nights at Freddy's</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Lexend:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  /* Scène de nuit volontairement identique en thème clair et sombre : le quiz se joue dans le noir. */
+  :root {
+    --bg: #1a1240; --bg-glow: #33207a; --ink: #fff3dc; --dim: #b8aee0;
+    --magenta: #ff4fa8; --cyan: #42d6e6; --yellow: #ffc93c; --violet: #a58bff; --dark: #160e38;
+    --green: #3ddc84; --red: #ff5468;
+    --tile-a: #2d1d70; --tile-b: #1a1240;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  html { height: 100%; font-size: clamp(13px, 1.2vw, 30px); scroll-padding-top: env(safe-area-inset-top, 0px); }
+  *, *::before, *::after { box-sizing: inherit; }
+  body {
+    margin: 0; min-height: 100%;
+    background: radial-gradient(120% 80% at 50% 0%, var(--bg-glow), var(--bg) 60%) var(--bg);
+    color: var(--ink); font-family: 'Lexend', system-ui, sans-serif; overflow-x: hidden;
+  }
+  body.dawn { background: radial-gradient(130% 90% at 50% 100%, #ff9a5a, #c2409a 38%, var(--bg) 78%) var(--bg); }
+
+  .floor {
+    position: fixed; left: -30%; right: -30%; bottom: 0; height: 46%;
+    background: repeating-conic-gradient(var(--tile-a) 0 25%, var(--tile-b) 0 50%) 0 0 / 7rem 7rem;
+    transform: perspective(38rem) rotateX(62deg); transform-origin: 50% 100%;
+    -webkit-mask-image: linear-gradient(to top, #000, transparent 88%);
+            mask-image: linear-gradient(to top, #000, transparent 88%);
+    opacity: .55; pointer-events: none; z-index: 0;
+  }
+  .stage {
+    position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh;
+    display: grid; grid-template-rows: auto 1fr auto; padding: 1.6rem 3rem 1.4rem;
+  }
+  .timer { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; height: .5rem; background: rgba(255,255,255,.08); z-index: 3; }
+  .timer.off, .timer.hidden { visibility: hidden; }
+  #bar { height: 100%; width: 100%; background: linear-gradient(90deg, var(--magenta), var(--cyan)); }
+
+  .top { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; }
+  .home { justify-self: start; color: var(--dim); text-decoration: none; font-size: 1rem; opacity: .8; }
+  .home:hover { opacity: 1; color: var(--ink); }
+  .home:focus-visible { outline: .2rem solid var(--cyan); outline-offset: .2rem; }
+  .score {
+    font-family: 'Bungee', Impact, sans-serif; font-size: 1.7rem; color: var(--yellow);
+    padding: .15rem 1.1rem; border-radius: 999px; background: rgba(255,255,255,.07);
+    font-variant-numeric: tabular-nums; visibility: hidden;
+  }
+  .score.show { visibility: visible; }
+  .score.bump { animation: bump .45s; }
+  .clock {
+    justify-self: end; font-family: 'Bungee', Impact, sans-serif; font-size: 2.6rem; color: var(--cyan);
+    text-shadow: 0 0 .7rem rgba(66,214,230,.55); font-variant-numeric: tabular-nums;
+  }
+  body.dawn .clock { color: var(--yellow); text-shadow: 0 0 .7rem rgba(255,201,60,.6); }
+
+  #view { align-self: center; width: 100%; max-width: 80rem; margin-inline: auto; }
+
+  .title h1 {
+    font-family: 'Bungee', Impact, sans-serif; font-weight: 400; font-size: 6.5rem; line-height: .96;
+    margin: 0 0 1.6rem; text-shadow: .07em .07em 0 var(--magenta);
+  }
+  .title .sub { font-size: 1.9rem; line-height: 1.4; color: var(--dim); max-width: 24em; margin: 0; }
+  body.dawn .title .sub { color: var(--ink); }
+  .title .big {
+    font-family: 'Bungee', Impact, sans-serif; font-size: 3rem; color: var(--yellow); margin: 0 0 .8rem;
+  }
+
+  .meta { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; color: var(--dim); font-size: 1.15rem; }
+  .chip { padding: .2rem .9rem; border-radius: 999px; background: var(--violet); color: var(--dark); font-weight: 600; }
+  .q { font-size: 2.7rem; line-height: 1.2; font-weight: 800; margin: 0 0 2.2rem; max-width: 24em; }
+
+  .opts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+  .opts li { display: flex; }
+  .opt {
+    --c: var(--cyan);
+    appearance: none; -webkit-appearance: none; width: 100%; margin: 0; font: inherit; text-align: left; color: inherit; cursor: pointer;
+    display: flex; align-items: center; gap: 1.1rem; padding: 1.1rem 1.3rem;
+    border: .2rem solid var(--c); border-radius: .9rem; background: rgba(255,255,255,.05);
+    font-size: 1.7rem; font-weight: 600;
+    transition: opacity .35s, background .25s, color .35s, border-color .35s, transform .2s;
+  }
+  .opts li:nth-child(1) .opt { --c: var(--magenta); }
+  .opts li:nth-child(2) .opt { --c: var(--cyan); }
+  .opts li:nth-child(3) .opt { --c: var(--yellow); }
+  .opts li:nth-child(4) .opt { --c: var(--violet); }
+  .opts:not(.done) .opt:hover { background: rgba(255,255,255,.13); transform: translateY(-.15rem); }
+  .opt:focus-visible { outline: .25rem solid var(--ink); outline-offset: .2rem; }
+  .letter {
+    flex: none; width: 3rem; height: 3rem; display: grid; place-items: center; border-radius: .6rem;
+    background: var(--c); color: var(--dark); font-family: 'Bungee', Impact, sans-serif; font-size: 1.6rem;
+  }
+  .opts.done .opt { opacity: .28; cursor: default; }
+  .opts.done .opt.right, .opts.done .opt.wrong { opacity: 1; color: var(--dark); }
+  .opts.done .opt.right { background: var(--green); border-color: var(--green); }
+  .opts.done .opt.wrong { background: var(--red); border-color: var(--red); }
+  .opts.done .opt.right .letter { background: var(--dark); color: var(--green); }
+  .opts.done .opt.wrong .letter { background: var(--dark); color: var(--red); }
+  .opts.done .opt.right::after { content: "\2713"; margin-left: auto; font-size: 2rem; }
+  .opts.done .opt.wrong::after { content: "\2717"; margin-left: auto; font-size: 2rem; }
+  .opt.picked { animation: pop .4s; }
+  .opt.wrong { animation: shake .4s; }
+
+  .note {
+    margin: 1.6rem 0 0; min-height: 2.8em; max-width: 44ch; font-size: 1.4rem; line-height: 1.4;
+    opacity: 0; transform: translateY(.4rem); transition: opacity .4s .1s, transform .4s .1s;
+  }
+  .note.on { opacity: 1; transform: none; }
+  .verdict.ok { color: var(--green); }
+  .verdict.ko { color: var(--red); }
+  .verdict.t { color: var(--dim); }
+
+  .bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; }
+  .hint { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; color: var(--dim); font-size: .95rem; opacity: .85; }
+  .next {
+    font-family: 'Bungee', Impact, sans-serif; font-size: 1.3rem; padding: .8rem 1.6rem; border: 0;
+    border-radius: .9rem; background: var(--yellow); color: var(--dark); cursor: pointer;
+  }
+  .next:hover { filter: brightness(1.08); }
+  .next:focus-visible { outline: .25rem solid var(--cyan); outline-offset: .25rem; }
+
+  #blackout { position: fixed; inset: 0; background: #000; opacity: 0; pointer-events: none; z-index: 10; }
+
+  @keyframes pop { 0% { transform: scale(1); } 40% { transform: scale(1.04); } 100% { transform: scale(1); } }
+  @keyframes shake { 0%,100% { transform: translateX(0); } 20% { transform: translateX(-.5rem); } 40% { transform: translateX(.5rem); }
+                     60% { transform: translateX(-.35rem); } 80% { transform: translateX(.35rem); } }
+  @keyframes bump { 0% { transform: scale(1); } 40% { transform: scale(1.25); } 100% { transform: scale(1); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .opt, .note { transition-duration: .01ms !important; transition-delay: 0s !important; }
+    .opt.picked, .opt.wrong, .score.bump { animation: none; }
+    .opts:not(.done) .opt:hover { transform: none; }
+  }
+  @media (max-width: 800px) {
+    html { font-size: 14px; }
+    .stage { padding: 1rem 1.1rem 1rem; }
+    .opts { grid-template-columns: 1fr; }
+    .q { font-size: 1.9rem; }
+    .title h1 { font-size: 3.4rem; }
+    .title .sub { font-size: 1.3rem; }
+    .opt { font-size: 1.3rem; }
+    .clock { font-size: 1.8rem; }
+    .score { font-size: 1.2rem; }
+  }
+</style>
+</head>
+<body>
+  <div class="floor" aria-hidden="true"></div>
+  <div class="timer hidden" id="timer" aria-hidden="true"><div id="bar"></div></div>
+
+  <main class="stage">
+    <header class="top"><a class="home" href="../">← Tous les quiz</a><div class="score" id="score" aria-live="polite">Score 0</div><div class="clock" id="clock">12:00 AM</div></header>
+    <section id="view" aria-live="polite"></section>
+    <footer class="bottom">
+      <div class="hint">
+        <span>Clic ou A à D : répondre</span>
+        <span>Espace ou → : suite</span>
+        <span>← : revenir</span>
+        <span id="hint-timer">T : minuteur activé</span>
+        <span>F : plein écran</span>
+      </div>
+      <button class="next" id="next" type="button">Commencer la nuit</button>
+    </footer>
+  </main>
+
+  <div id="blackout" aria-hidden="true"></div>
+
+<script>
+(() => {
+  const QUESTIONS = [
+    {
+      "cat": "Jeux",
+      "q": "Qui a créé la série de jeux Five Nights at Freddy's ?",
+      "o": [
+        "Shigeru Miyamoto",
+        "Scott Cawthon",
+        "Markus Persson",
+        "Toby Fox"
+      ],
+      "a": 1,
+      "note": "Un seul développeur. Le premier jeu est sorti en août 2014."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Comment s'appelle le gardien de nuit du tout premier jeu ?",
+      "o": [
+        "Jeremy Fitzgerald",
+        "Gregory",
+        "Mike Schmidt",
+        "Michael Afton"
+      ],
+      "a": 2,
+      "note": "Il doit tenir de minuit à 6 h du matin, cinq nuits de suite."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Quel animatronique se cache derrière le rideau de Pirate Cove ?",
+      "o": [
+        "Bonnie",
+        "Chica",
+        "Freddy",
+        "Foxy"
+      ],
+      "a": 3,
+      "note": "Si tu ne le surveilles pas assez, il fonce dans le couloir de gauche."
+    },
+    {
+      "cat": "Film",
+      "q": "En quelle année le premier film est-il sorti au cinéma ?",
+      "o": [
+        "2021",
+        "2022",
+        "2023",
+        "2024"
+      ],
+      "a": 2,
+      "note": "Sorti en octobre 2023, il a été un gros succès au box-office."
+    },
+    {
+      "cat": "Film",
+      "q": "Quel acteur joue Mike dans le film ?",
+      "o": [
+        "Tom Holland",
+        "Timothée Chalamet",
+        "Jacob Elordi",
+        "Josh Hutcherson"
+      ],
+      "a": 3,
+      "note": "Il est aussi connu pour son rôle de Peeta dans Hunger Games."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Quel animatronique jaune apparaît parfois dans le bureau et peut faire planter le jeu ?",
+      "o": [
+        "Golden Freddy",
+        "Springtrap",
+        "The Puppet",
+        "Balloon Boy"
+      ],
+      "a": 0,
+      "note": "Il est rare, et son apparition surprend même les joueurs expérimentés."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Dans FNaF 2, quel objet te déguise en Freddy pour tromper les animatroniques ?",
+      "o": [
+        "La lampe torche",
+        "Les portes blindées",
+        "Le masque de Freddy",
+        "Le boîtier à musique"
+      ],
+      "a": 2,
+      "note": "Il n'y a pas de portes dans ce jeu : il faut aussi la lampe et le boîtier à musique."
+    },
+    {
+      "cat": "Film",
+      "q": "Quel studio, spécialiste de l'horreur, a produit le film ?",
+      "o": [
+        "A24",
+        "Blumhouse",
+        "Pixar",
+        "Marvel Studios"
+      ],
+      "a": 1,
+      "note": "Scott Cawthon a aussi participé à l'écriture du scénario."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Dans FNaF 3, quel animatronique abîmé te traque dans l'attraction ?",
+      "o": [
+        "Nightmare",
+        "Springtrap",
+        "Bonnie",
+        "Toy Chica"
+      ],
+      "a": 1,
+      "note": "Le jeu se passe dans Fazbear's Fright, une attraction d'horreur."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Dans FNaF 4, où se passe l'action ?",
+      "o": [
+        "Dans la chambre d'un enfant",
+        "Dans un centre commercial",
+        "Dans un bureau de sécurité",
+        "Dans un cirque"
+      ],
+      "a": 0,
+      "note": "Tu affrontes des versions cauchemars des animatroniques."
+    },
+    {
+      "cat": "Film",
+      "q": "Comment s'appelle la petite sœur de Mike dans le film ?",
+      "o": [
+        "Vanessa",
+        "Sophie",
+        "Jessica",
+        "Abby"
+      ],
+      "a": 3,
+      "note": "Mike veut la protéger, mais elle se lie d'amitié avec les animatroniques."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Quelle animatronique rousse donne son nom à l'entreprise de Sister Location ?",
+      "o": [
+        "Ballora",
+        "Funtime Freddy",
+        "Funtime Foxy",
+        "Circus Baby"
+      ],
+      "a": 3,
+      "note": "L'entreprise s'appelle Circus Baby's Entertainment and Rental."
+    },
+    {
+      "cat": "Saga",
+      "q": "Comment s'appelle le grand méchant de la saga, surnommé « Purple Guy » ?",
+      "o": [
+        "Henry Emily",
+        "William Afton",
+        "Michael Afton",
+        "Gregory"
+      ],
+      "a": 1,
+      "note": "Dans le film, il apparaît sous le nom de Steve Raglan."
+    },
+    {
+      "cat": "Jeux",
+      "q": "Comment s'appelle le gigantesque complexe de Security Breach ?",
+      "o": [
+        "Fazbear Mall",
+        "Circus Gardens",
+        "Freddy Fazbear's Mega Pizzaplex",
+        "Freddy's Fun Park"
+      ],
+      "a": 2,
+      "note": "Tu y incarnes Gregory, un enfant enfermé pour la nuit."
+    },
+    {
+      "cat": "Film",
+      "q": "En quelle année est sorti Five Nights at Freddy's 2 au cinéma ?",
+      "o": [
+        "2025",
+        "2024",
+        "2026",
+        "2023"
+      ],
+      "a": 0,
+      "note": "Sorti en décembre 2025, deux ans après le premier film."
+    }
+  ];
+
+  const N = QUESTIONS.length;
+  const TIME = 25;
+  const LETTERS = ["A", "B", "C", "D"];
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
+
+  let idx = -1;              // -1 titre, 0..N-1 questions, N fin
+  let picks = {};            // idx -> 0..3 (clic), -1 (réponse révélée), -2 (temps écoulé)
+  let busy = false;
+  let timerOn = true;
+  let tm = null;
+
+  const isQ = () => idx >= 0 && idx < N;
+  const isRevealed = () => isQ() && (idx in picks);
+  const score = () => QUESTIONS.reduce((s, q, i) => s + (picks[i] === q.a ? 1 : 0), 0);
+  const played = () => Object.values(picks).some(p => p >= 0);
+
+  const fmtClock = i => {
+    const m = Math.min(Math.max(i, 0), N) * 24;
+    const h = Math.floor(m / 60), mm = m % 60;
+    return (h === 0 ? 12 : h) + ':' + String(mm).padStart(2, '0') + ' AM';
+  };
+
+  function setBtn() {
+    let t;
+    if (idx === -1) t = "Commencer la nuit";
+    else if (idx >= N) t = "Rejouer";
+    else if (!isRevealed()) t = "Voir la réponse";
+    else t = idx < N - 1 ? "Question suivante" : "Voir le score";
+    $('next').textContent = t;
+  }
+
+  function updateHint() { $('hint-timer').textContent = timerOn ? "T : minuteur activé" : "T : minuteur coupé"; }
+
+  function updateScore(bump) {
+    const el = $('score');
+    el.textContent = "Score " + score();
+    el.classList.toggle('show', isQ() && played());
+    if (bump && !reduce) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
+  }
+
+  function endMessage(s) {
+    if (s === N) return "Sans faute ! Les animatroniques n'ont aucune chance.";
+    if (s >= 12) return "Gardien de nuit expert. Bien joué !";
+    if (s >= 8) return "Tu as survécu à la nuit. Pas mal du tout.";
+    if (s >= 4) return "Tu as tenu jusqu'à 6 h, mais de justesse.";
+    return "Les animatroniques t'ont eu cette fois. Rejoue pour ta revanche !";
+  }
+
+  function paint() {
+    const it = QUESTIONS[idx], pick = picks[idx];
+    const ul = document.querySelector('.opts');
+    ul.classList.add('done');
+    ul.querySelectorAll('.opt').forEach((b, i) => {
+      if (i === it.a) { b.classList.add('right'); if (i === pick) b.classList.add('picked'); }
+      else if (i === pick) b.classList.add('wrong');
+      b.setAttribute('aria-disabled', 'true');
+    });
+    let verdict = '';
+    if (pick === it.a) verdict = '<strong class="verdict ok">Bonne réponse !</strong> ';
+    else if (pick >= 0) verdict = `<strong class="verdict ko">Raté, c'était la ${LETTERS[it.a]}.</strong> `;
+    else if (pick === -2) verdict = '<strong class="verdict t">Temps écoulé.</strong> ';
+    $('note').innerHTML = verdict + it.note;
+    $('note').classList.add('on');
+  }
+
+  function render() {
+    const v = $('view');
+    document.body.classList.toggle('dawn', idx === N);
+    $('clock').textContent = fmtClock(idx);
+    $('timer').classList.toggle('hidden', !isQ());
+
+    if (idx === -1) {
+      v.innerHTML = `<div class="title"><h1>Five Nights<br>at Freddy's</h1><p class="sub">Le quiz&nbsp;: 15 questions sur les jeux et les films. Clique sur ta réponse, de minuit à 6 h du matin.</p></div>`;
+    } else if (idx >= N) {
+      const s = score();
+      v.innerHTML = played()
+        ? `<div class="title"><h1>6:00 AM</h1><p class="big">Score : ${s} sur ${N}</p><p class="sub">${endMessage(s)}</p></div>`
+        : `<div class="title"><h1>6:00 AM</h1><p class="sub">La nuit est terminée. Tu as survécu !</p></div>`;
+    } else {
+      const it = QUESTIONS[idx];
+      v.innerHTML = `<div>
+        <div class="meta"><span>Question ${idx + 1} sur ${N}</span><span class="chip">${it.cat}</span></div>
+        <h2 class="q">${it.q}</h2>
+        <ul class="opts">${it.o.map((t, i) =>
+          `<li><button type="button" class="opt" data-i="${i}"><span class="letter">${LETTERS[i]}</span><span>${t}</span></button></li>`).join('')}</ul>
+        <p class="note" id="note" aria-live="polite"></p></div>`;
+      if (isRevealed()) paint();
+    }
+    updateScore(false);
+    setBtn();
+  }
+
+  function startTimer() {
+    const bar = $('bar'), box = $('timer');
+    clearTimeout(tm);
+    bar.style.transition = 'none';
+    bar.style.width = '100%';
+    void bar.offsetWidth;
+    box.classList.toggle('off', !timerOn);
+    if (!timerOn) return;
+    bar.style.transition = `width ${TIME}s linear`;
+    bar.style.width = '0%';
+    tm = setTimeout(() => { if (isQ() && !isRevealed() && !busy) reveal(-2); }, TIME * 1000);
+  }
+
+  function stopTimer() {
+    clearTimeout(tm);
+    const bar = $('bar');
+    const w = getComputedStyle(bar).width;
+    bar.style.transition = 'none';
+    bar.style.width = w;
+  }
+
+  function reveal(kind) {            // -1 : révélée à la main, -2 : temps écoulé
+    if (!isQ() || isRevealed()) return;
+    picks[idx] = kind;
+    stopTimer();
+    paint();
+    setBtn();
+  }
+
+  function answer(i) {
+    if (!isQ() || isRevealed() || busy) return;
+    picks[idx] = i;
+    stopTimer();
+    paint();
+    updateScore(i === QUESTIONS[idx].a);
+    setBtn();
+  }
+
+  const black = $('blackout');
+  const lightsOut = () => black.animate(
+    [{ opacity: 0 }, { opacity: .85, offset: .12 }, { opacity: .15, offset: .24 },
+     { opacity: 1, offset: .42 }, { opacity: .6, offset: .5 }, { opacity: 1 }],
+    { duration: 520, fill: 'forwards' }).finished;
+  const lightsOn = () => black.animate(
+    [{ opacity: 1 }, { opacity: .2, offset: .18 }, { opacity: .9, offset: .3 },
+     { opacity: .05, offset: .55 }, { opacity: 0 }],
+    { duration: 620, fill: 'forwards' }).finished;
+
+  async function go(n) {
+    if (busy) return;
+    busy = true;
+    stopTimer();
+    try { if (!reduce) await lightsOut(); } catch (e) {}
+    idx = n;
+    render();
+    try { if (!reduce) await lightsOn(); } catch (e) {}
+    busy = false;
+    if (isQ() && !isRevealed()) startTimer();
+  }
+
+  function advance() {
+    if (busy) return;
+    if (idx === -1) go(0);
+    else if (isQ()) { isRevealed() ? go(idx + 1) : reveal(-1); }
+    else { picks = {}; go(-1); }
+  }
+
+  function back() {
+    if (busy) return;
+    if (idx >= N) go(N - 1);
+    else if (idx > 0) go(idx - 1);
+    else if (idx === 0) go(-1);
+  }
+
+  function toggleTimer() {
+    timerOn = !timerOn;
+    updateHint();
+    if (isQ() && !isRevealed() && !busy) {
+      if (timerOn) startTimer();
+      else { stopTimer(); $('timer').classList.add('off'); }
+    }
+  }
+
+  function fullscreen() {
+    try {
+      if (document.fullscreenElement) document.exitFullscreen();
+      else document.documentElement.requestFullscreen().catch(() => {});
+    } catch (e) {}
+  }
+
+  $('next').addEventListener('click', advance);
+  $('view').addEventListener('click', e => {
+    const b = e.target.closest('.opt');
+    if (b) answer(+b.dataset.i);
+  });
+
+  const KEYS = { a: 0, b: 1, c: 2, d: 3, '1': 0, '2': 1, '3': 2, '4': 3 };
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    const k = e.key.toLowerCase();
+    if (k in KEYS && isQ()) { answer(KEYS[k]); return; }
+    switch (e.key) {
+      case ' ':
+      case 'Enter':
+        if (e.target.tagName === 'BUTTON') return; // le bouton gère son propre clic
+        e.preventDefault(); advance(); break;
+      case 'ArrowRight':
+      case 'PageDown':
+        e.preventDefault(); advance(); break;
+      case 'ArrowLeft':
+      case 'PageUp':
+        e.preventDefault(); back(); break;
+      case 't': case 'T': toggleTimer(); break;
+      case 'f': case 'F': fullscreen(); break;
+    }
+  });
+
+  updateHint();
+  render();
+})();
+</script>
+</body>
+</html>
