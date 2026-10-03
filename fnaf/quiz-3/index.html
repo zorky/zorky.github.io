@@ -155,7 +155,7 @@
   <div class="timer hidden" id="timer" aria-hidden="true"><div id="bar"></div></div>
 
   <main class="stage">
-    <header class="top"><a class="home" href="../">← Tous les quiz</a><div class="score" id="score" aria-live="polite">Score 0</div><div class="clock" id="clock">12:00 AM</div></header>
+    <header class="top"><a class="home" href="../">← Tous les quiz</a><div class="score" id="score" aria-live="polite">Score 0</div><div class="clock" id="clock">00:00</div></header>
     <section id="view" aria-live="polite"></section>
     <footer class="bottom">
       <div class="hint">
@@ -376,7 +376,7 @@
   const fmtClock = i => {
     const m = Math.min(Math.max(i, 0), N) * 24;
     const h = Math.floor(m / 60), mm = m % 60;
-    return (h === 0 ? 12 : h) + ':' + String(mm).padStart(2, '0') + ' AM';
+    return String(h).padStart(2, '0') + ':' + String(mm).padStart(2, '0');
   };
 
   function setBtn() {
@@ -433,8 +433,8 @@
     } else if (idx >= N) {
       const s = score();
       v.innerHTML = played()
-        ? `<div class="title"><h1>6:00 AM</h1><p class="big">Score : ${s} sur ${N}</p><p class="sub">${endMessage(s)}</p></div>`
-        : `<div class="title"><h1>6:00 AM</h1><p class="sub">La nuit est terminée. Tu as survécu !</p></div>`;
+        ? `<div class="title"><h1>06:00</h1><p class="big">Score : ${s} sur ${N}</p><p class="sub">${endMessage(s)}</p></div>`
+        : `<div class="title"><h1>06:00</h1><p class="sub">La nuit est terminée. Tu as survécu !</p></div>`;
     } else {
       const it = QUESTIONS[idx];
       v.innerHTML = `<div>
