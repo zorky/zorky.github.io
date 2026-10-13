@@ -1,374 +1,497 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>CP technique - Développeur fullstack - Olivier Duval</title>
-        <meta charset="utf-8"/>
-        <meta name="author" content="Olivier Duval"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="description" content="Je suis Olivier Duval, manager IT, chef de projet technique, développeur fullstack spécialisé Django REST / python / Angular / Typescript / Javascript, actuellement en poste à l'Université de Paris 8 dans la ville de Saint-Denis, France."/>
-        <meta property="og:type" content="website"/>
-        <meta property="og:title" content="Manager IT - CP technique - Développeur fullstack - Olivier Duval"/>
-        <meta property="og:image" content="https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg"/>
-        <meta property="og:description" content="Je suis Olivier Duval, chef de projet technique, développeur fullstack spécialisé Django REST / python / Angular / Typescript / Javascript, actuellement en poste à l'Université de Paris 8 dans la ville de Saint-Denis, France."/>
-        <meta name="twitter:title" content="CP technique - Développeur fullstack - Olivier Duval"/>
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:image" content="https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg"/>
-        <meta name="twitter:description" content="Je suis Olivier Duval, chef de projet technique, développeur fullstack spécialisé Django REST / python / Angular / Typescript / Javascript, actuellement en poste à l'Université de Paris 8 dans la ville de Saint-Denis, France."/>
-        <link rel="stylesheet" href="https://fontlibrary.org//face/roboto-1" type="text/css"/>
-        <!-- source des css : https://cdnjs.com/libraries/font-awesome/-->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" type="text/css"/>
-        <link rel="stylesheet" href="./src/css/base.css"/>
-        <link rel="stylesheet" href="./src/css/card.css"/>
-        <link rel="stylesheet" href="./src/css/thumbnail.css"/>
-        <link rel="stylesheet" href="./src/css/path.css"/>
-        <link rel="stylesheet" href="./src/css/skill-box.css"/>
-        <link rel="stylesheet" href="./src/css/list.css"/>
-        <link rel="favicon" href="./src/img/favicon.png"/>
-    </head>
-    <body>
-        <div class="page">
-            <div class="card" id="person">
-                <img id="person-picture" src=""/>
-                <img id="person-country" src="src/img/france.svg"/>
-                <section>
-                    <h1 id="person-fullname"></h1>
-                    <h2 id="person-job"></h2>
-                    <p>80nj0u2 ! Je suis <strong id="person-firstname"></strong>, <strong id="person-position"></strong> spécialisé en <strong id="person-speciality"></strong> actuellement <strong id="person-company"></strong> dans la ville de <strong id="person-city">Saint-Denis</strong>.</p>
-                    <div>
-                        <a target="_blank" class="button" href="https://www.doyoubuzz.com/olivier-duval">CV détaillé</a>
-                        <a target="_blank" class="button" href="https://www.linkedin.com/in/oduval/">LinkedIn <i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
-                        <a target="_blank" class="button" href="https://bsky.app/profile/olivier-duval.bsky.social">BlueSky <i class="fa-brands fa-bluesky"></i></a>
-                        <a target="_blank" class="button" href="https://github.com/zorky">Github <i class="fa-brands fa-github-square" aria-hidden="true"></i></a>
-                        <a target="_blank" class="button" href="https://twitter.com/zorky">Twitter <i class="fa-brands fa-twitter-square" aria-hidden="true"></i></a>
-                        <a target="_blank" class="button" href="https://duval.dev">Cette page <i class="fa-brands fa-github-square" aria-hidden="true"></i></a>
-                    </div>
-                    <hr/>
-                </section>
-                <section>
-                    <h3>Compétences</h3>
-                    <ul class="list">
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Django / DRF API
-                                <div class="box-well">
-                                    Framework
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Python
-                                <div class="box-well">
-                                    Langage
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                TypeScript
-                                <div class="box-well">
-                                    Langage
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Javascript
-                                <div class="box-well">
-                                    Langage
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Angular
-                                <div class="box-well">
-                                    Framework
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                Docker
-                                <div class="box-well">
-                                    Containers
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                Docker Swarm
-                                <div class="box-well">
-                                    Orchestration
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                Gitlab
-                                <div class="box-well">
-                                    Source forge
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Git
-                                <div class="box-well">
-                                    Versioning
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                Jenkins
-                                <div class="box-well">
-                                    CD
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Scrum
-                                <div class="box-well">
-                                    Projet
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Taïga
-                                <div class="box-well">
-                                    Projet
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="skill-box">
-                                <span class="skill-favorite fa fa-bolt"></span>
-                                Responsable équipe
-                                <div class="box-well">
-                                    Manager IT
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                    <hr/>
-                </section>
-                <section>
-                    <h3>Exemples de réalisations d'applications en équipe</h3>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?process)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Dématérialisation de procédures</span>
-                            <p class="thumbnail-title">Paris 8 - transverse</p>
-                            <p class="thumbnail-description">Application de dématérialisation de procédures internes</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://www.univ-paris8.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?hr)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">DAR</span>
-                            <p class="thumbnail-title">Paris 8 - RH</p>
-                            <p class="thumbnail-description">Application pour les RH pour les demandes de recrutement</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://www.univ-paris8.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?hr)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">RDV étudiants</span>
-                            <p class="thumbnail-title">Paris 8 - Scolarité</p>
-                            <p class="thumbnail-description">Gestion des RDV étudiants à la "doctolib"</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://www.univ-paris8.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?hr)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Helpdesk</span>
-                            <p class="thumbnail-title">Paris 8 - DSI</p>
-                            <p class="thumbnail-description">Service Desk DSI</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://www.univ-paris8.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?code)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Application On Promise / SaaS</span>
-                            <p class="thumbnail-title">BusinessLine</p>
-                            <p class="thumbnail-description">Solution d'ITSM "no code" pour les clients</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://businessline.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?commerce)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Ecommerce</span>
-                            <p class="thumbnail-title">Edenred</p>
-                            <p class="thumbnail-description">Tunnel de vente Kadéos interne à Edenred</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://edenred.fr" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?24h)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Billetterie</span>
-                            <p class="thumbnail-title">France Billet pour l'ACO</p>
-                            <p class="thumbnail-description">Billetterie 24h du Mans</p>
-                            <div class="thumbnail-footer">
-                                <a href="https://ticket.24h-lemans.com/" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="thumbnail">
-                        <div class="thumbnail-cover" style="background-image: url(https://source.unsplash.com/random/800*600?collaborative)"></div>
-                        <div class="thumbnail-content">
-                            <span class="badge">Plateforme extranet</span>
-                            <p class="thumbnail-title">CCINET</p>
-                            <p class="thumbnail-description">Extranet pour les CCI : 26 000 collaborateurs et 1 000 partenaires</p>
-                            <p class="thumbnail-description"><i>Extranet fermé / remplacé et n'est plus accessible, voir l'archive Web ci-après</i></p>
-                            <div class="thumbnail-footer">
-                                <a href="https://web.archive.org/web/20181109032948/https://ccinet.cci.fr/ssologin/log_page.aspx?askedPage=%2fDefault.aspx&FailedLogonReason=" target="_blank">En savoir plus</a>
-                            </div>
-                        </div>
-                    </div>
-                    <hr/>
-                </section>
-                <section>
-                    <h3>Parcours professionel</h3>
-                    <div class="path">
-                        <div class="step">
-                            <p class="step-title">Université Paris 8 - 04/2017 à aujourd'hui</p>
-                            <p class="step-subtitle">Ministère de l'Enseignement du Supérieur et de la Recherche (ESR)</p>
-                            <p>Responsable pôle développement, Développeur fullstack Angular/Django Rest</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">BusinessLine - 12/2015 - 03/2017</p>
-                            <p class="step-subtitle">Editeur solution ITSM</p>
-                            <p>Responsable équipe développement, CP technique / Scrummaster, développeur fullstack AngularJS/C# ASPNET MVC - WebAPI</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Edenred - mission ESN - 05/2015 - 11/2015</p>
-                            <p class="step-subtitle">Pré-payés ecommerce</p>
-                            <p>CP technique, développeur fullstack AngularJS/C# ASPNET MVC</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">France Billet - mission ESN - 05/2014 - 04/2015</p>
-                            <p class="step-subtitle">Billeterie pour les 24h du Mans</p>
-                            <p>CP technique / Scrummaster, développeur fullstack Javascript/Boostrap/C# ASPNET MVC</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Foncia - mission ESN - 04/2014 - 04/2014</p>
-                            <p class="step-subtitle">Immobilier</p>
-                            <p>Scrummaster, développeur fullstack Javascript/C# ASPNET MVC</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Formation - 03/2014 - 03/2014</p>
-                            <p class="step-subtitle">Formation ScrumMaster</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">CCI France - 05/1998 - 02/2014</p>
-                            <p class="step-subtitle">Chambres de commerce</p>                            
-                            <p>CP technique, développeur fullstack Javascript/Boostrap/C# ASPNET Webforms - MVC</p>
-                            <p>Responsable technique plateformes Web</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">AMJ Groupe - 02/1998 - 04/1998</p>
-                            <p class="step-subtitle">ESN</p>
-                            <p>Développeur Lotus Notes / Javascript</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Service militaire - 04/1997 - 01/1998</p>
-                            <p class="step-subtitle">Armée - service des affectations</p>
-                            <p>Développeur FoxPro / Perl</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Alegria - 05/1994 - 04/1997</p>
-                            <p class="step-subtitle">Editeur de services télématiques</p>
-                            <p>Développeur C / moteur Option télématique, PHP/FI site Internet, administrateur Linux</p>
-                        </div>
-                    </div>
-                    <hr/>
-                </section>
-                <section>
-                    <h3>Formations suivies - extrait</h3>
-                    <div class="path">
-                        <div class="step">
-                            <p class="step-title">Django</p>
-                            <p class="step-subtitle">interne</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Python</p>
-                            <p class="step-subtitle">Dawan</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Angular</p>
-                            <p class="step-subtitle">SFEIR</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Docker</p>
-                            <p class="step-subtitle">interne</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Kubernetes</p>
-                            <p class="step-subtitle">Dawan</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Ansible</p>
-                            <p class="step-subtitle">Dawan</p>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3>Formations initiales : BAC+5</h3>
-                    <div class="path">
-                        <div class="step">
-                            <p class="step-title">DESS (Master 2) Applications des Réseaux, Télématique & Multimédia</p>
-                            <p class="step-subtitle">Université Paris 7 - Denis Diderot (Jussieu)</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">Licence / Maitrise (Master 1) Informatique & Mathématiques</p>
-                            <p class="step-subtitle">Université Paris 7 - Denis Diderot (Jussieu)</p>
-                        </div>
-                        <div class="step">
-                            <p class="step-title">DUT Informatique</p>
-                            <p class="step-subtitle">IUT Reims</p>
-                        </div>
-                    </div>
-                    <hr/>
-                </section>
-            </div>
-            <div class="card">
-                <section>
-                    <div class="step">
-			    <!--			    <p>Le <a href="https://github.com/zorky/zorky.github.io" target="_blank">github</a></p> -->
-			    <p>Forké et inspiré de <a href="https://github.com/NicolasBrondin/john-doe" target="_blank">Nicolas Brondin</a></p> 
-                    </div>
-                </section>
-            </div>
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Olivier Duval – Responsable pôle développement, développeur fullstack Django / Angular</title>
+<meta name="author" content="Olivier Duval">
+<meta name="description" content="Je suis Olivier Duval, manager IT, chef de projet technique, développeur fullstack spécialisé Django REST / Python / Angular / TypeScript, actuellement en poste à l'Université Paris 8 à Saint-Denis, France.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Olivier Duval – Responsable pôle développement, développeur fullstack">
+<meta property="og:description" content="Django REST, Python, Angular, TypeScript. Du Minitel aux agents IA, 30 ans de code.">
+<meta property="og:image" content="https://zorky.github.io/src/img/olivier-photo-1674917889767.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=VT323&display=swap" rel="stylesheet">
+<script>
+document.documentElement.classList.add('js');
+(function(){var t=null;try{t=localStorage.getItem('theme')}catch(e){}
+if(!t&&matchMedia('(prefers-color-scheme: light)').matches)t='light';
+document.documentElement.dataset.theme=t==='light'?'light':'dark'})();
+</script>
+<style>
+:root{
+  --fond:#000; --ecran:#000; --blanc:#f2f2f2; --cyan:#46f0ff; --jaune:#ffe44d; --vert:#52ff8a; --bleu:#2340ff; --magenta:#ff58d6;
+  --mosaique:#46f0ff; --glow:rgba(255,255,255,.22); --scan:rgba(0,0,0,.16); --lead-ecran:rgba(242,242,242,.45);
+  --cadre:0 0 0 2px #1d1d1d,0 0 70px rgba(70,240,255,.08);
+  --touche-bg:#161616; --touche-bord:#3a3a3a; --touche-txt:#d8d8d8; --touche-hover:#242424; --touche-hover-txt:#fff;
+  --pied:#a8a8a8; --pied-lien:#46f0ff; --ombre-papier:none;
+  --papier:#fbfcf8; --bande:#e9f2e2; --encre:#161d18; --encre2:#3b4a40; --lien:#1b35e6; --hash:#8a5a00;
+  --pixel:"VT323",ui-monospace,"Courier New",monospace;
+  --texte:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+:root[data-theme="light"]{
+  --fond:#e3e8dc; --ecran:#fffef7; --blanc:#17221b; --cyan:#00657a; --jaune:#8a5600; --vert:#0a6a2c; --magenta:#a3128a;
+  --mosaique:#00657a; --glow:transparent; --scan:rgba(0,0,0,.035); --lead-ecran:rgba(23,34,27,.4);
+  --cadre:0 0 0 2px #b9c2b0,0 12px 40px rgba(30,45,30,.14);
+  --touche-bg:#f7f8f3; --touche-bord:#a3ad9a; --touche-txt:#2a352d; --touche-hover:#fff; --touche-hover-txt:#000;
+  --pied:#4a5a4f; --pied-lien:#1b35e6; --ombre-papier:0 0 0 1px rgba(22,29,24,.12),0 14px 44px rgba(30,45,30,.14);
+}
+*{box-sizing:border-box}
+html{background:var(--fond)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--fond);color:var(--blanc);font-family:var(--texte)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid var(--jaune);outline-offset:3px}
+
+/* ───────── Écran Minitel ───────── */
+.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:20px 0}
+.crt{
+  --pad:clamp(10px,2.6vw,22px);
+  position:relative;overflow:hidden;
+  width:max(320px,min(92vw,760px,calc((100svh - 130px) / 1.5)));
+  padding:var(--pad);border-radius:22px;background:var(--ecran);
+  box-shadow:var(--cadre);
+  font-family:var(--pixel);font-size:22px;line-height:1.05;color:var(--blanc);
+  text-shadow:0 0 .35em var(--glow);
+}
+.crt::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;
+  background:repeating-linear-gradient(to bottom,var(--scan) 0 1px,transparent 1px 3px)}
+.probe{position:absolute;left:0;top:0;visibility:hidden;white-space:pre;pointer-events:none}
+.cols{position:relative}
+.cols p{margin:0}
+.bar{display:flex;justify-content:space-between;background:var(--bleu);color:#fff;padding:0 .5ch;text-shadow:none}
+.olivier{display:block;margin-top:.5em;color:var(--jaune)}
+h1{margin:0;font:inherit}
+.mosaic{display:none;width:100%;height:5.25em}
+.js .mosaic{display:block}
+.nojs{display:block;font-size:4em;line-height:1;color:var(--cyan)}
+.js .nojs{display:none}
+.role{margin-top:.5em !important}
+.org{color:var(--cyan)}
+.intro{margin-top:.5em !important}
+.menu{list-style:none;margin:.5em 0 0;padding:0}
+.menu a{display:flex;align-items:baseline;gap:1ch;color:var(--blanc);text-decoration:none}
+.menu .n{color:var(--jaune);font-weight:400}
+.menu .lead{flex:1;min-width:1ch;border-bottom:.1em dotted var(--lead-ecran);transform:translateY(-.25em)}
+.menu .hint{color:var(--cyan)}
+.menu a:hover,.menu a:focus-visible{background:var(--blanc);color:var(--ecran);outline:none;text-shadow:none}
+.menu a:hover .n,.menu a:hover .hint,.menu a:focus-visible .n,.menu a:focus-visible .hint{color:var(--ecran)}
+.prompt{display:flex;align-items:baseline;gap:1ch;margin:.5em 0 0;color:var(--vert)}
+.prompt input{width:2ch;padding:0;border:0;border-bottom:.1em solid var(--vert);border-radius:0;background:transparent;
+  color:var(--vert);font:inherit;text-align:center;caret-color:var(--vert);text-shadow:inherit}
+.prompt input:focus{outline:none;background:color-mix(in srgb,var(--vert) 20%,transparent)}
+.prompt .then{color:var(--cyan)}
+.status{min-height:1.05em;margin-top:.5em !important;color:var(--magenta)}
+.status.info{color:var(--cyan)}
+
+.boot{position:absolute;top:0;left:0;right:0;padding:var(--pad);display:none;color:var(--vert)}
+.js:not(.ready) .boot{display:block}
+.js:not(.ready) .cols{visibility:hidden}
+.boot p{margin:0}
+.boot .b2{opacity:0;animation:on 0s 550ms forwards}
+@keyframes on{to{opacity:1}}
+.cursor{display:inline-block;width:.45em;height:.8em;background:currentColor;vertical-align:-.05em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}.boot .b2{animation:none;opacity:1}}
+
+.keys{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:0 12px}
+.keys button,.theme{font:600 .82rem var(--texte);color:var(--touche-txt);background:var(--touche-bg);border:1px solid var(--touche-bord);border-bottom-width:3px;
+  border-radius:6px;padding:.5rem .95rem;cursor:pointer}
+.keys button:hover,.theme:hover{background:var(--touche-hover);color:var(--touche-hover-txt)}
+.keys button:active,.theme:active{border-bottom-width:1px;transform:translateY(2px)}
+.theme{position:fixed;top:12px;right:12px;z-index:5}
+
+/* ───────── Papier listing ───────── */
+.paper{
+  position:relative;max-width:920px;margin:0 auto;color:var(--encre);box-shadow:var(--ombre-papier);
+  background:repeating-linear-gradient(to bottom,var(--papier) 0 76px,var(--bande) 76px 152px);
+  padding:3.5rem clamp(2.2rem,8vw,5.5rem) 4.5rem;
+}
+.paper::before,.paper::after{
+  content:"";position:absolute;top:0;bottom:0;width:clamp(24px,5vw,44px);
+  background:radial-gradient(circle at 50% 18px,var(--fond) 0 5px,transparent 5.6px) 0 0/100% 36px repeat-y,#f1f4ea;
+}
+.paper::before{left:0;border-right:2px dashed #aab5a1}
+.paper::after{right:0;border-left:2px dashed #aab5a1}
+.paper section{padding-bottom:3.4rem}
+.paper section:last-child{padding-bottom:0}
+.paper h2{margin:0 0 1.6rem;font:400 clamp(2.4rem,7vw,3.4rem)/1 var(--pixel);color:var(--encre);scroll-margin-top:1rem}
+.paper h2:focus{outline:none}
+.paper a{color:var(--lien);text-underline-offset:.2em}
+.paper :focus-visible{outline-color:var(--lien)}
+.paper p{margin:0}
+.paper .sous{margin:-.9rem 0 1.4rem;color:var(--encre2)}
+
+/* git log */
+.log{list-style:none;margin:0;padding:0}
+.log li{display:grid;grid-template-columns:1.5rem 1fr;grid-template-areas:"g t" "g m";column-gap:.7rem}
+.log time{grid-area:t;font:1.35rem/1.2 var(--pixel);color:var(--encre2)}
+.node{grid-area:g;position:relative}
+.node::before{content:"";position:absolute;left:50%;top:.6rem;bottom:0;width:2px;margin-left:-1px;background:var(--encre)}
+.node::after{content:"";position:absolute;left:50%;top:.33rem;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--encre)}
+.log li:last-child .node::before{display:none}
+.log li:first-child .node::after{background:var(--papier);border:3px solid var(--lien)}
+.msg{grid-area:m;padding-bottom:1.8rem}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem .6rem;margin-bottom:.25rem !important}
+.hash{font:1.2rem/1 var(--pixel);color:var(--hash)}
+.head strong{font-weight:600}
+.ref{font:1.05rem/1 var(--pixel);color:var(--lien);border:1px solid currentColor;border-radius:3px;padding:.15rem .4rem}
+.detail{line-height:1.55;max-width:62ch}
+@media (min-width:720px){
+  .log li{grid-template-columns:6.2rem 1.5rem 1fr;grid-template-areas:"t g m"}
+  .log time{text-align:right}
+}
+
+/* réalisations + compétences */
+.works,.skills{list-style:none;margin:0;padding:0}
+.works li,.skills div{display:grid;gap:.15rem 2rem;padding:.9rem 0;border-top:2px dotted rgba(22,29,24,.35)}
+.works li:last-child,.skills div:last-child{border-bottom:2px dotted rgba(22,29,24,.35)}
+.w-name{display:block;font:600 1.05rem/1.3 var(--texte)}
+.w-meta{font:1.2rem/1.1 var(--pixel);color:var(--encre2)}
+.w-desc{line-height:1.55}
+.w-note{color:var(--encre2);font-size:.92rem}
+.skills dt{font:1.5rem/1.1 var(--pixel)}
+.skills dd{margin:0;line-height:1.6}
+.skills{margin:0}
+@media (min-width:720px){
+  .works li{grid-template-columns:15rem 1fr}
+  .skills div{grid-template-columns:11rem 1fr}
+}
+
+/* contact */
+.contact{list-style:none;margin:0;padding:0;font:1.5rem/1.6 var(--pixel)}
+.contact li{display:flex;flex-wrap:wrap;align-items:baseline;column-gap:1ch}
+.contact .lead{flex:1 1 2ch;border-bottom:2px dotted rgba(22,29,24,.4);transform:translateY(-.3em)}
+@media (min-width:720px){.contact{font-size:1.8rem}}
+
+footer{max-width:920px;margin:0 auto;padding:2rem clamp(1.4rem,8vw,5.5rem) 3rem;display:flex;flex-wrap:wrap;
+  justify-content:space-between;gap:.4rem 1.5rem;color:var(--pied);font-size:.9rem}
+footer a{color:var(--pied-lien)}
+</style>
+</head>
+<body>
+
+<button type="button" class="theme" id="theme">Thème clair</button>
+
+<header class="hero">
+  <div class="crt" id="crt">
+    <span class="probe" id="probe" aria-hidden="true">0000000000000000000000000000000000000000</span>
+
+    <div class="boot" aria-hidden="true">
+      <p>Appel de duval.dev…</p>
+      <p class="b2">CONNEXION <span class="cursor"></span></p>
+    </div>
+
+    <div class="cols" id="cols">
+      <p class="bar"><span>duval.dev</span></p>
+
+      <h1>
+        <span class="sr">Olivier Duval</span>
+        <span class="olivier" aria-hidden="true">Olivier</span>
+        <canvas class="mosaic" id="mosaic" aria-hidden="true"></canvas>
+        <span class="nojs" aria-hidden="true">DUVAL</span>
+      </h1>
+
+      <p class="role">Responsable pôle développement</p>
+      <p class="org">Université Paris 8, Saint-Denis</p>
+      <p class="intro">Depuis 1994, je conçois et pilote des applications métier. Du Minitel aux agents IA.</p>
+
+      <nav aria-label="Sommaire">
+        <ul class="menu">
+          <li><a href="#parcours"><b class="n">1</b><span>Parcours</span><i class="lead"></i><span class="hint">30 ans</span></a></li>
+          <li><a href="#realisations"><b class="n">2</b><span>Réalisations</span><i class="lead"></i><span class="hint">30 projets</span></a></li>
+          <li><a href="#competences"><b class="n">3</b><span>Compétences</span><i class="lead"></i><span class="hint">la stack</span></a></li>
+          <li><a href="#contact"><b class="n">4</b><span>Contact</span><i class="lead"></i><span class="hint">me joindre</span></a></li>
+        </ul>
+      </nav>
+
+      <form class="prompt" id="menu" autocomplete="off">
+        <label for="choix">Choix :</label>
+        <input id="choix" inputmode="numeric" maxlength="1" aria-describedby="status">
+        <span class="then">puis Envoi</span>
+      </form>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+  <div class="keys" role="group" aria-label="Touches du Minitel">
+    <button type="button" id="k-sommaire">Sommaire</button>
+    <button type="button" id="k-guide">Guide</button>
+    <button type="button" id="k-suite">Suite</button>
+    <button type="button" id="k-envoi">Envoi</button>
+  </div>
+</header>
+
+<main class="paper">
+
+  <section id="parcours">
+    <h2>Parcours</h2>
+    <ol class="log">
+      <li>
+        <time datetime="2025">2025</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">e4a91c7</code><strong>feat: IA générative</strong><span class="ref">HEAD → main</span></p>
+          <p class="detail">Exploration du RAG et des agents en Python : LangChain, LangGraph, Agno.</p>
         </div>
-        <script src="./src/js/main.js"></script>
-    </body>
+      </li>
+      <li>
+        <time datetime="2017-04">2017-04</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">b72d0f3</code><strong>feat: Université Paris 8</strong></p>
+          <p class="detail">Responsable du pôle développement. Applications métier en Django REST et Angular, déployées avec Docker Swarm, GitLab et Jenkins. Équipe de 2 à 3 développeurs.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2015-12">2015-12</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">3c8fa19</code><strong>feat: BusinessLine</strong></p>
+          <p class="detail">Responsable équipe de développement et Scrum master. Solution ITSM no-code en AngularJS et C# ASP.NET MVC / WebAPI.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2015-05">2015-05</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">9a15e6d</code><strong>feat: Edenred</strong></p>
+          <p class="detail">Mission ESN. CP technique sur le tunnel de vente Kadéos, en AngularJS et C# ASP.NET MVC.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="2014-05">2014-05</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">5f40b82</code><strong>feat: France Billet</strong></p>
+          <p class="detail">Mission ESN. CP technique et Scrum master sur la billetterie des 24h du Mans.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="1998-05">1998-05</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">d1e7a04</code><strong>refactor: CCI France</strong></p>
+          <p class="detail">16 ans. CP technique, puis responsable technique des plateformes Web. Extranet CCINET : 26 000 collaborateurs et 1 000 partenaires.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="1998-02">1998-02</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">07bc3e5</code><strong>chore: AMJ Groupe</strong></p>
+          <p class="detail">Développement Lotus Notes et JavaScript.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="1997-04">1997-04</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">a6f92d1</code><strong>chore: service militaire</strong></p>
+          <p class="detail">Service des affectations de l'Armée. FoxPro et Perl.</p>
+        </div>
+      </li>
+      <li>
+        <time datetime="1994-05">1994-05</time><span class="node" aria-hidden="true"></span>
+        <div class="msg">
+          <p class="head"><code class="hash">0000001</code><strong>init: Alegria</strong><span class="ref">origin/init</span></p>
+          <p class="detail">Éditeur de services télématiques. C et moteur Option télématique, PHP/FI, administration Linux. Le premier commit.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="realisations">
+    <h2>Réalisations</h2>
+    <p class="sous">Une sélection parmi une trentaine de projets menés en équipe.</p>
+    <ul class="works">
+      <li>
+        <div><span class="w-name">Dématérialisation de procédures</span><span class="w-meta">Paris 8, transverse</span></div>
+        <p class="w-desc">Dématérialisation des procédures internes de l'université.</p>
+      </li>
+      <li>
+        <div><span class="w-name">DAR</span><span class="w-meta">Paris 8, RH</span></div>
+        <p class="w-desc">Demandes de recrutement pour les ressources humaines.</p>
+      </li>
+      <li>
+        <div><span class="w-name">RDV étudiants</span><span class="w-meta">Paris 8, scolarité</span></div>
+        <p class="w-desc">Prise de rendez-vous étudiants, sur le modèle de Doctolib.</p>
+      </li>
+      <li>
+        <div><span class="w-name">Helpdesk</span><span class="w-meta">Paris 8, DSI</span></div>
+        <p class="w-desc">Service desk de la DSI.</p>
+      </li>
+      <li>
+        <div><a class="w-name" href="https://businessline.fr">ITSM no-code</a><span class="w-meta">BusinessLine</span></div>
+        <p class="w-desc">Solution ITSM no-code pour les clients, en on-premise et en SaaS.</p>
+      </li>
+      <li>
+        <div><span class="w-name">Tunnel de vente Kadéos</span><span class="w-meta">Edenred</span></div>
+        <p class="w-desc">Tunnel de vente interne à Edenred.</p>
+      </li>
+      <li>
+        <div><a class="w-name" href="https://ticket.24h-lemans.com/">Billetterie 24h du Mans</a><span class="w-meta">France Billet, pour l'ACO</span></div>
+        <p class="w-desc">Billetterie en ligne des 24 Heures du Mans.</p>
+      </li>
+      <li>
+        <div><a class="w-name" href="https://web.archive.org/web/20181109032948/https://ccinet.cci.fr/ssologin/log_page.aspx?askedPage=%2fDefault.aspx&amp;FailedLogonReason=">CCINET</a><span class="w-meta">CCI France</span></div>
+        <p class="w-desc">Extranet des CCI : 26 000 collaborateurs, 1 000 partenaires. <span class="w-note">Fermé aujourd'hui, consultable sur l'archive web.</span></p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="competences">
+    <h2>Compétences</h2>
+    <dl class="skills">
+      <div><dt>Backend</dt><dd>Python, Django REST Framework, PostgreSQL</dd></div>
+      <div><dt>Frontend</dt><dd>TypeScript, JavaScript, Angular</dd></div>
+      <div><dt>Delivery</dt><dd>Docker, Docker Swarm, Git, GitLab, Jenkins</dd></div>
+      <div><dt>Équipe</dt><dd>Management d'équipe de développement, Scrum, Taïga</dd></div>
+      <div><dt>En exploration</dt><dd>FastAPI, IA générative, RAG, LangChain, LangGraph, Agno</dd></div>
+    </dl>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li><span>GitHub</span><i class="lead"></i><a href="https://github.com/zorky">github.com/zorky</a></li>
+      <li><span>LinkedIn</span><i class="lead"></i><a href="https://www.linkedin.com/in/oduval/">in/oduval</a></li>
+      <li><span>Bluesky</span><i class="lead"></i><a href="https://bsky.app/profile/olivier-duval.bsky.social">olivier-duval.bsky.social</a></li>
+      <li><span>CV imprimable</span><i class="lead"></i><a href="cv/">duval.dev/cv</a></li>
+      <li><span>CV détaillé</span><i class="lead"></i><a href="https://www.doyoubuzz.com/olivier-duval">doyoubuzz.com/olivier-duval</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <span>© 2026 Olivier Duval</span>
+  <span>Site statique, hébergé sur <a href="https://pages.github.com/">GitHub Pages</a></span>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const $ = id => document.getElementById(id);
+  const crt = $('crt'), cols = $('cols'), probe = $('probe'), cv = $('mosaic');
+  const status = $('status'), choix = $('choix'), form = $('menu');
+  const sections = { 1: 'parcours', 2: 'realisations', 3: 'competences', 4: 'contact' };
+
+  /* ── Mosaïque : "DUVAL" en cellules 2×3 par caractère, séparées comme en vidéotex ── */
+  const COLS = 80, ROWS = 15, TXT_W = 74, TXT_H = 12;
+  let lit = null, shown = 0;
+
+  function buildBitmap(text) {
+    const c = document.createElement('canvas');
+    c.width = COLS; c.height = ROWS;
+    const x = c.getContext('2d', { willReadFrequently: true });
+    x.fillStyle = '#000'; x.fillRect(0, 0, COLS, ROWS);
+    x.fillStyle = '#fff';
+    x.font = '900 100px "Arial Black", Impact, "Helvetica Neue", Arial, sans-serif';
+    x.textBaseline = 'alphabetic';
+    const m = x.measureText(text);
+    const w = m.actualBoundingBoxLeft + m.actualBoundingBoxRight;
+    const h = m.actualBoundingBoxAscent + m.actualBoundingBoxDescent;
+    const sx = TXT_W / w, sy = TXT_H / h;
+    x.setTransform(sx, 0, 0, sy,
+      (COLS - TXT_W) / 2 + m.actualBoundingBoxLeft * sx,
+      (ROWS - TXT_H) / 2 + m.actualBoundingBoxAscent * sy);
+    x.fillText(text, 0, 0);
+    const d = x.getImageData(0, 0, COLS, ROWS).data;
+    const out = new Uint8Array(COLS * ROWS);
+    for (let i = 0; i < out.length; i++) out[i] = d[i * 4] > 120 ? 1 : 0;
+    return out;
+  }
+
+  function draw() {
+    if (!lit) return;
+    const r = cv.getBoundingClientRect();
+    if (!r.width) return;
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(r.width * dpr);
+    cv.height = Math.round(r.height * dpr);
+    const g = cv.getContext('2d');
+    g.clearRect(0, 0, cv.width, cv.height);
+    g.fillStyle = getComputedStyle(root).getPropertyValue('--mosaique').trim() || '#46f0ff';
+    const cw = cv.width / COLS, ch = cv.height / ROWS, gap = Math.max(1, Math.round(dpr));
+    const maxY = shown * 3;
+    for (let y = 0; y < maxY; y++)
+      for (let x = 0; x < COLS; x++)
+        if (lit[y * COLS + x]) g.fillRect(x * cw, y * ch, cw - gap, ch - gap);
+  }
+
+  function reveal() {
+    if (reduce) { shown = 5; draw(); return; }
+    shown = 0; draw();
+    const t = setInterval(() => { shown++; draw(); if (shown >= 5) clearInterval(t); }, 120);
+  }
+
+  /* ── 40 colonnes exactement : on ajuste la taille de police à la largeur ── */
+  function fit() {
+    crt.style.fontSize = '100px';
+    const pw = probe.getBoundingClientRect().width;
+    if (!pw) return;
+    crt.style.fontSize = (100 * cols.clientWidth / pw) + 'px';
+    draw();
+  }
+
+  try { lit = buildBitmap('DUVAL'); } catch (e) { lit = null; }
+  fit();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  let lastW = 0;
+  new ResizeObserver(() => { if (crt.clientWidth !== lastW) { lastW = crt.clientWidth; fit(); } }).observe(crt);
+
+  /* ── Connexion ── */
+  function ready() {
+    root.classList.add('ready');
+    fit(); reveal();
+    if (matchMedia('(hover:hover) and (pointer:fine)').matches) choix.focus({ preventScroll: true });
+  }
+  if (reduce) ready(); else setTimeout(ready, 1100);
+
+  /* ── Thème ── */
+  const themeBtn = $('theme');
+  const syncTheme = () => { themeBtn.textContent = root.dataset.theme === 'light' ? 'Thème sombre' : 'Thème clair'; };
+  themeBtn.addEventListener('click', () => {
+    const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    syncTheme(); draw();
+  });
+  syncTheme();
+
+  /* ── Navigation ── */
+  function say(msg, kind) { status.textContent = msg; status.className = 'status' + (kind ? ' ' + kind : ''); }
+
+  function go(id) {
+    const el = $(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    const h = el.querySelector('h2');
+    if (h) { h.setAttribute('tabindex', '-1'); h.focus({ preventScroll: true }); }
+    history.replaceState(null, '', '#' + id);
+  }
+
+  choix.addEventListener('input', () => { choix.value = choix.value.replace(/\D/g, '').slice(-1); });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const v = choix.value.trim();
+    choix.value = '';
+    if (sections[v]) { say(''); go(sections[v]); }
+    else say(v ? 'Choix inconnu : ' + v + '. Tape 1 à 4.' : 'Tape un chiffre de 1 à 4, puis Envoi.');
+  });
+
+  $('k-envoi').addEventListener('click', () => form.requestSubmit());
+  $('k-suite').addEventListener('click', () => go('parcours'));
+  $('k-guide').addEventListener('click', () => say('Tape 1 à 4 puis Envoi, ou clique sur une ligne.', 'info'));
+  $('k-sommaire').addEventListener('click', () => {
+    choix.value = ''; say('');
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    choix.focus({ preventScroll: true });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey) return;
+    if (/^(INPUT|TEXTAREA|SELECT)$/.test(e.target.tagName)) return;
+    if (sections[e.key]) go(sections[e.key]);
+  });
+})();
+</script>
+</body>
 </html>
