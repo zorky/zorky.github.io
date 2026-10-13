@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV – Olivier Duval – Responsable pôle développement, développeur fullstack</title>
+<meta name="description" content="CV d'Olivier Duval : responsable pôle développement, développeur fullstack Django REST / Python / Angular / TypeScript. 30 ans d'expérience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=VT323&display=swap" rel="stylesheet">
+<style>
+:root{
+  --encre:#161d18; --encre2:#44534a; --filet:#b8c2b0; --lien:#1b35e6;
+  --pixel:"VT323",ui-monospace,"Courier New",monospace;
+  --texte:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#e3e8dc;color:var(--encre);font:10pt/1.45 var(--texte)}
+a{color:var(--lien);text-underline-offset:.15em}
+:focus-visible{outline:3px solid var(--lien);outline-offset:3px}
+
+.actions{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;max-width:210mm;margin:1rem auto 0;padding:0 1rem}
+.actions button,.actions a.btn{font:600 .85rem var(--texte);color:#2a352d;background:#f7f8f3;border:1px solid #a3ad9a;border-bottom-width:3px;
+  border-radius:6px;padding:.5rem .95rem;cursor:pointer;text-decoration:none}
+.actions button:hover,.actions a.btn:hover{background:#fff}
+
+.page{max-width:210mm;margin:1rem auto 2rem;background:#fff;padding:14mm 16mm;box-shadow:0 0 0 1px rgba(22,29,24,.12),0 14px 44px rgba(30,45,30,.14)}
+
+header{display:grid;gap:.2rem;padding-bottom:.7rem;border-bottom:2px solid var(--encre)}
+h1{margin:0;font:400 38pt/1 var(--pixel)}
+.titre{margin:0;font-weight:600;font-size:11.5pt}
+.liens{margin:.25rem 0 0;display:flex;flex-wrap:wrap;gap:0 1.4rem;font-size:9.5pt;color:var(--encre2)}
+
+section{margin-top:.9rem}
+h2{margin:0 0 .35rem;font:400 19pt/1 var(--pixel);padding-bottom:.15rem;border-bottom:1px dotted var(--filet)}
+h3{margin:0;font:600 10pt/1.35 var(--texte)}
+p{margin:0}
+ul{margin:.2rem 0 0;padding-left:1.1rem}
+li{margin:.1rem 0}
+
+.profil{max-width:68ch}
+.skills{display:grid;grid-template-columns:8.5rem 1fr;gap:.15rem 1rem;margin:0}
+.skills dt{font:400 13pt/1.2 var(--pixel)}
+.skills dd{margin:0}
+
+.job{display:grid;grid-template-columns:7.2rem 1fr;gap:0 1rem;margin-top:.6rem;break-inside:avoid}
+.when{font:400 12.5pt/1.3 var(--pixel);color:var(--encre2)}
+.org{color:var(--encre2);font-size:9.5pt}
+.jobs-small .job{margin-top:.4rem}
+
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem}
+.works{list-style:none;margin:0;padding:0}
+.works li{margin:.25rem 0;break-inside:avoid}
+.works b{font-weight:600}
+.works span{color:var(--encre2)}
+.fmt h3{margin-top:.25rem}
+
+@media (max-width:640px){
+  .page{padding:1.2rem 1rem}
+  .job,.skills,.cols{grid-template-columns:1fr}
+  .when{margin-bottom:.1rem}
+}
+
+@page{size:A4;margin:12mm 14mm}
+@media print{
+  body{background:#fff;font-size:9.5pt}
+  .actions{display:none}
+  .page{max-width:none;margin:0;padding:0;box-shadow:none}
+  a{color:inherit;text-decoration:none}
+  section{break-inside:auto}
+  h2{break-after:avoid}
+}
+</style>
+</head>
+<body>
+
+<div class="actions">
+  <a class="btn" href="../">← Retour au site</a>
+  <button type="button" onclick="window.print()">Imprimer / Enregistrer en PDF</button>
+</div>
+
+<main class="page">
+  <header>
+    <h1>Olivier Duval</h1>
+    <p class="titre">Responsable pôle développement, développeur fullstack Django REST / Angular</p>
+    <p class="liens">
+      <a href="https://duval.dev">duval.dev</a>
+      <a href="https://github.com/zorky">github.com/zorky</a>
+      <a href="https://www.linkedin.com/in/oduval/">linkedin.com/in/oduval</a>
+      <a href="https://bsky.app/profile/olivier-duval.bsky.social">olivier-duval.bsky.social</a>
+    </p>
+  </header>
+
+  <section>
+    <h2>Profil</h2>
+    <p class="profil">30 ans d'expérience en développement, direction technique et management d'équipe. Responsable du pôle développement de l'Université Paris 8 depuis 2017 : applications métier en Django REST, Angular et PostgreSQL. Depuis 2025, exploration de l'IA générative : RAG et agents en Python.</p>
+  </section>
+
+  <section>
+    <h2>Compétences</h2>
+    <dl class="skills">
+      <dt>Backend</dt><dd>Python, Django REST Framework, PostgreSQL</dd>
+      <dt>Frontend</dt><dd>TypeScript, JavaScript, Angular</dd>
+      <dt>Delivery</dt><dd>Docker, Docker Swarm, Git, GitLab, Jenkins</dd>
+      <dt>Équipe</dt><dd>Management d'équipe de développement, Scrum, Taïga</dd>
+      <dt>En exploration</dt><dd>FastAPI, IA générative, RAG, LangChain, LangGraph, Agno</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Expérience</h2>
+
+    <article class="job">
+      <div class="when">04/2017 à ce jour</div>
+      <div>
+        <h3>Responsable pôle développement, développeur fullstack Angular / Django REST</h3>
+        <p class="org">Université Paris 8, Saint-Denis. Ministère de l'Enseignement supérieur et de la Recherche.</p>
+        <ul>
+          <li>Direction d'une équipe de 2 à 3 développeurs.</li>
+          <li>Applications métier : dématérialisation de procédures, DAR (recrutement RH), RDV étudiants, Helpdesk DSI.</li>
+          <li>Stack : Django REST, Angular, PostgreSQL, Docker Swarm, GitLab, Jenkins.</li>
+          <li>Depuis 2025 : IA générative, RAG et agents en Python (LangChain, LangGraph, Agno).</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">12/2015 à 03/2017</div>
+      <div>
+        <h3>Responsable équipe développement, CP technique / Scrum master, développeur fullstack AngularJS / C# ASP.NET MVC – WebAPI</h3>
+        <p class="org">BusinessLine, éditeur de solution ITSM.</p>
+        <ul><li>Solution ITSM no-code pour les clients, en on-premise et en SaaS.</li></ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">05/2015 à 11/2015</div>
+      <div>
+        <h3>CP technique, développeur fullstack AngularJS / C# ASP.NET MVC</h3>
+        <p class="org">Edenred (mission ESN), pré-payés e-commerce.</p>
+        <ul><li>Tunnel de vente Kadéos interne à Edenred.</li></ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">05/2014 à 04/2015</div>
+      <div>
+        <h3>CP technique / Scrum master, développeur fullstack JavaScript / Bootstrap / C# ASP.NET MVC</h3>
+        <p class="org">France Billet (mission ESN), billetterie des 24h du Mans.</p>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">04/2014</div>
+      <div>
+        <h3>Scrum master, développeur fullstack JavaScript / C# ASP.NET MVC</h3>
+        <p class="org">Foncia (mission ESN), immobilier.</p>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">05/1998 à 02/2014</div>
+      <div>
+        <h3>CP technique, responsable technique plateformes Web, développeur fullstack JavaScript / Bootstrap / C# ASP.NET WebForms – MVC</h3>
+        <p class="org">CCI France, chambres de commerce.</p>
+        <ul><li>Extranet CCINET : 26 000 collaborateurs et 1 000 partenaires.</li></ul>
+      </div>
+    </article>
+
+    <div class="jobs-small">
+      <article class="job">
+        <div class="when">02/1998 à 04/1998</div>
+        <div><h3>Développeur Lotus Notes / JavaScript</h3><p class="org">AMJ Groupe, ESN.</p></div>
+      </article>
+      <article class="job">
+        <div class="when">04/1997 à 01/1998</div>
+        <div><h3>Développeur FoxPro / Perl</h3><p class="org">Service militaire, service des affectations de l'Armée.</p></div>
+      </article>
+      <article class="job">
+        <div class="when">05/1994 à 04/1997</div>
+        <div>
+          <h3>Développeur C / moteur Option télématique, PHP/FI, administrateur Linux</h3>
+          <p class="org">Alegria, éditeur de services télématiques.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section>
+    <h2>Réalisations en équipe</h2>
+    <ul class="works cols">
+      <li><b>Dématérialisation de procédures</b> <span>Paris 8, transverse</span></li>
+      <li><b>DAR</b> <span>Paris 8, RH</span></li>
+      <li><b>RDV étudiants</b> <span>Paris 8, scolarité</span></li>
+      <li><b>Helpdesk</b> <span>Paris 8, DSI</span></li>
+      <li><b>ITSM no-code</b> <span>BusinessLine</span></li>
+      <li><b>Tunnel de vente Kadéos</b> <span>Edenred</span></li>
+      <li><b>Billetterie 24h du Mans</b> <span>France Billet, pour l'ACO</span></li>
+      <li><b>CCINET</b> <span>CCI France</span></li>
+    </ul>
+    <p class="org" style="margin-top:.3rem">Sélection parmi une trentaine de projets.</p>
+  </section>
+
+  <section class="fmt">
+    <h2>Formation</h2>
+    <div class="cols">
+      <div>
+        <h3>Formation initiale, BAC+5</h3>
+        <ul>
+          <li>DESS (Master 2) Applications des réseaux, télématique et multimédia, Université Paris 7 – Denis Diderot</li>
+          <li>Licence / Maîtrise (Master 1) Informatique et mathématiques, Université Paris 7 – Denis Diderot</li>
+          <li>DUT Informatique, IUT de Reims</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Formations suivies, extrait</h3>
+        <ul>
+          <li>Django (interne)</li>
+          <li>Python (Dawan)</li>
+          <li>Angular (SFEIR)</li>
+          <li>Docker (interne)</li>
+          <li>Kubernetes, Ansible (Dawan)</li>
+          <li>ScrumMaster (03/2014)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+</body>
+</html>
