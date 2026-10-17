@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CV – Olivier Duval – Responsable pôle développement, développeur fullstack</title>
-<meta name="description" content="CV d'Olivier Duval : responsable pôle développement, développeur fullstack Django REST / Python / Angular / TypeScript. 30 ans d'expérience.">
+<title>CV – Olivier Duval – Responsable de l'équipe développement, développeur fullstack</title>
+<meta name="description" content="CV d'Olivier Duval : responsable de l'équipe développement, développeur fullstack Django REST / Python / Angular / TypeScript. 30 ans d'expérience.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=VT323&display=swap" rel="stylesheet">
@@ -29,7 +29,10 @@ a{color:var(--lien);text-underline-offset:.15em}
 header{display:grid;gap:.2rem;padding-bottom:.7rem;border-bottom:2px solid var(--encre)}
 h1{margin:0;font:400 38pt/1 var(--pixel)}
 .titre{margin:0;font-weight:600;font-size:11.5pt}
-.liens{margin:.25rem 0 0;display:flex;flex-wrap:wrap;gap:0 1.4rem;font-size:9.5pt;color:var(--encre2)}
+.sous-titre{margin:0;font-size:10.5pt;color:var(--encre2)}
+.missions{list-style:none;margin:.15rem 0 0;padding:0;font-size:9.5pt;color:var(--encre2)}
+.missions li{margin:0}
+.liens{margin:.35rem 0 0;display:flex;flex-wrap:wrap;gap:0 1.4rem;font-size:9.5pt;color:var(--encre2)}
 
 section{margin-top:.9rem}
 h2{margin:0 0 .35rem;font:400 19pt/1 var(--pixel);padding-bottom:.15rem;border-bottom:1px dotted var(--filet)}
@@ -82,7 +85,13 @@ li{margin:.1rem 0}
 <main class="page">
   <header>
     <h1>Olivier Duval</h1>
-    <p class="titre">Responsable pôle développement, développeur fullstack Django REST / Angular</p>
+    <p class="titre">Responsable de l'équipe développement</p>
+    <p class="sous-titre">Développeur fullstack Django REST / Angular</p>
+    <ul class="missions">
+      <li>Pilotage de projets métier</li>
+      <li>Maintien de l'écosystème infra en production</li>
+      <li>DevOps : GitLab, Jenkins, Docker</li>
+    </ul>
     <p class="liens">
       <a href="https://duval.dev">duval.dev</a>
       <a href="https://github.com/zorky">github.com/zorky</a>
@@ -93,7 +102,7 @@ li{margin:.1rem 0}
 
   <section>
     <h2>Profil</h2>
-    <p class="profil">30 ans d'expérience en développement, direction technique et management d'équipe. Responsable du pôle développement de l'Université Paris 8 depuis 2017 : applications métier en Django REST, Angular et PostgreSQL. Depuis 2025, exploration de l'IA générative : RAG et agents en Python.</p>
+    <p class="profil">30 ans d'expérience en développement, direction technique et management d'équipe. Responsable de l'équipe développement de l'Université Paris 8 : applications métier en Django REST, Angular et PostgreSQL, pilotage de projets, infrastructure de production et DevOps. Depuis 2025, exploration de l'IA générative : RAG et agents en Python.</p>
   </section>
 
   <section>
@@ -103,7 +112,7 @@ li{margin:.1rem 0}
       <dt>Frontend</dt><dd>TypeScript, JavaScript, Angular</dd>
       <dt>Delivery</dt><dd>Docker, Docker Swarm, Git, GitLab, Jenkins</dd>
       <dt>Équipe</dt><dd>Management d'équipe de développement, Scrum, Taïga</dd>
-      <dt>En exploration</dt><dd>FastAPI, IA générative, RAG, LangChain, LangGraph</dd>
+      <dt>En exploration</dt><dd>FastAPI, IA générative, RAG, LangChain, LangGraph, Qdrant, Infinity, Docling</dd>
     </dl>
   </section>
 
@@ -111,16 +120,27 @@ li{margin:.1rem 0}
     <h2>Expérience</h2>
 
     <article class="job">
-      <div class="when">04/2017 à ce jour</div>
+      <div class="when">04/2019 à ce jour</div>
       <div>
-        <h3>Responsable pôle développement, développeur fullstack Angular / Django REST</h3>
+        <h3>Responsable de l'équipe développement, développeur fullstack Angular / Django REST</h3>
         <p class="org">Université Paris 8, Saint-Denis. Ministère de l'Enseignement supérieur et de la Recherche.</p>
         <ul>
-          <li>Direction d'une équipe de 5 développeurs.</li>
-          <li>Applications métier : dématérialisation de procédures, DAR (recrutement RH), RDV étudiants, Scolarité, ...</li>
+          <li>Direction d'une équipe de 3 développeurs et 1 recetteur.</li>
+          <li>Applications métier : dématérialisation de procédures, DAR (recrutement RH), RDV étudiants, Helpdesk DSI.</li>
           <li>Stack : Django REST, Angular, PostgreSQL, Docker Swarm, GitLab, Jenkins.</li>
-          <li>Depuis 2025 : IA générative, RAG et agents en Python (LangChain, LangGraph).</li>
+          <li>Pilotage de projets métier.</li>
+          <li>Maintien de l'écosystème infra en production et de la chaîne DevOps (GitLab, Jenkins, Docker).</li>
+          <li>Depuis 2025 : IA générative, RAG et agents en Python (LangChain, LangGraph, Qdrant, Infinity, Docling).</li>
+          <li>Prototype RAG sur 3 sources internes : ENT, intranet du personnel (12&nbsp;000 chunks), Wiki P8, procédures internes (14&nbsp;000) et Tout en 8, newsletter interne (15&nbsp;000), soit 41&nbsp;000 chunks.</li>
         </ul>
+      </div>
+    </article>
+
+    <article class="job">
+      <div class="when">04/2017 à 03/2019</div>
+      <div>
+        <h3>CP technique, développeur fullstack Angular / Django REST</h3>
+        <p class="org">Université Paris 8, Saint-Denis.</p>
       </div>
     </article>
 
@@ -163,7 +183,7 @@ li{margin:.1rem 0}
       <div>
         <h3>CP technique, responsable technique plateformes Web, développeur fullstack JavaScript / Bootstrap / C# ASP.NET WebForms – MVC</h3>
         <p class="org">CCI France, chambres de commerce.</p>
-        <ul><li>Plateforme CCINET : 26 000 collaborateurs et 1 000 partenaires.</li></ul>
+        <ul><li>Extranet CCINET : 26 000 collaborateurs et 1 000 partenaires.</li></ul>
       </div>
     </article>
 
@@ -192,7 +212,7 @@ li{margin:.1rem 0}
       <li><b>Dématérialisation de procédures</b> <span>Paris 8, transverse</span></li>
       <li><b>DAR</b> <span>Paris 8, RH</span></li>
       <li><b>RDV étudiants</b> <span>Paris 8, scolarité</span></li>
-      <li><b>Scolarité</b> <span>Paris 8, DSI</span></li>
+      <li><b>Helpdesk</b> <span>Paris 8, DSI</span></li>
       <li><b>ITSM no-code</b> <span>BusinessLine</span></li>
       <li><b>Tunnel de vente Kadéos</b> <span>Edenred</span></li>
       <li><b>Billetterie 24h du Mans</b> <span>France Billet, pour l'ACO</span></li>
