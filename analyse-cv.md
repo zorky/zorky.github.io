@@ -21,7 +21,8 @@ Appliqué :
 - Volumétries Paris 8 : démat. 600/an, DAR 500/an, RDV étudiants 600/an, ATER 2 000 candidatures (1 200 candidats, 3 campagnes/an), SUAPS 12 000/an, scolarité (7 000 attestations, 22 000 codes d'activation de comptes numériques, 150 000 courriels en 2 mois).
 - Audience : 800+ agents, 20 000+ étudiants.
 - Gain de temps : ATER, productivité multipliée par 5 (estimation, soit environ 10 dossiers par jour au lieu de 2), fin des échanges par mail, suivi de qui traite quoi, réactivité auprès des demandeurs. Disponibilité 24h/24 et 7j/7.
-- Celery en production depuis des années, suivi avec Flower, environ 100 000 tâches exécutées.
+- Celery en production depuis des années, suivi avec Flower, environ 100 000 tâches exécutées par an.
+- Metabase (dataviz) : tableaux de bord pour l'équipe et les services métiers, source des volumétries. Ajouté en puce Paris 8, dans la stack et dans une ligne « Data » des compétences.
 
 ### 2. Section « Réalisations » : fait
 

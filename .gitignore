@@ -92,3 +92,6 @@ yarn.lock
 .yarnrc
 .yarnrc.yml
 .pnp.cjs
+
+# Notes de travail privees (ne pas publier sur GitHub Pages)
+/analyse-cv.md
