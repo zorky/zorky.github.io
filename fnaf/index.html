@@ -37,41 +37,42 @@
     position: relative; z-index: 1; min-height: 100vh; min-height: 100dvh;
     width: 100%; max-width: 56rem; margin-inline: auto;
     display: flex; flex-direction: column; justify-content: center;
-    padding: 2.5rem 2rem;
+    padding: 1.5rem 2rem;
   }
   h1 {
     font-family: 'Bungee', Impact, sans-serif; font-weight: 400;
-    font-size: 4.6rem; line-height: .96; margin: 0 0 1.2rem;
+    font-size: 3.2rem; line-height: .96; margin: 0 0 .8rem;
     text-shadow: .07em .07em 0 var(--magenta);
   }
-  .sub { font-size: 1.5rem; line-height: 1.4; color: var(--dim); margin: 0 0 2.4rem; max-width: 26em; }
+  .sub { font-size: 1.25rem; line-height: 1.4; color: var(--dim); margin: 0 0 1.2rem; max-width: 38em; }
 
-  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.1rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
   .item { --c: var(--magenta); display: flex; gap: .9rem; align-items: stretch; }
   .item:nth-child(2) { --c: var(--cyan); }
   .item:nth-child(3) { --c: var(--yellow); }
   .item:nth-child(4) { --c: var(--violet); }
+  .item:nth-child(5) { --c: #ff9a5a; }
 
   .play {
     flex: 1; display: flex; align-items: center; gap: 1.2rem;
-    padding: 1.1rem 1.4rem; text-decoration: none; color: var(--ink);
+    padding: .65rem 1.3rem; text-decoration: none; color: var(--ink);
     border: .2rem solid var(--c); border-radius: .9rem; background: rgba(255,255,255,.05);
     transition: background .2s, transform .2s;
   }
   .play:hover { background: rgba(255,255,255,.11); transform: translateX(.3rem); }
   .tile {
-    flex: none; width: 3.6rem; height: 3.6rem; display: grid; place-items: center;
+    flex: none; width: 3rem; height: 3rem; display: grid; place-items: center;
     border-radius: .7rem; background: var(--c); color: var(--dark);
-    font-family: 'Bungee', Impact, sans-serif; font-size: 2rem;
+    font-family: 'Bungee', Impact, sans-serif; font-size: 1.6rem;
   }
   .txt { flex: 1; min-width: 0; }
-  .name { display: block; font-size: 1.55rem; font-weight: 800; margin-bottom: .2rem; }
+  .name { display: block; font-size: 1.35rem; font-weight: 800; margin-bottom: .2rem; }
   .desc { display: block; font-size: 1.05rem; line-height: 1.35; color: var(--dim); }
   .go { font-family: 'Bungee', Impact, sans-serif; font-size: 1.2rem; color: var(--c); white-space: nowrap; }
 
   a:focus-visible { outline: .25rem solid var(--cyan); outline-offset: .2rem; }
 
-  .foot { margin: 2.2rem 0 0; font-size: .9rem; color: var(--dim); opacity: .8; max-width: 42em; line-height: 1.5; }
+  .foot { margin: 1rem 0 0; font-size: .9rem; color: var(--dim); opacity: .8; max-width: 42em; line-height: 1.5; }
 
   @media (prefers-reduced-motion: reduce) { .play { transition: none; } .play:hover { transform: none; } }
   @media (max-width: 700px) {
@@ -87,7 +88,7 @@
   <div class="floor" aria-hidden="true"></div>
   <main>
     <h1>Five Nights<br>at Freddy's</h1>
-    <p class="sub">Quiz de fans sur les jeux et les films. Choisis ta nuit&nbsp;: 15 questions chacune, de minuit à 6 h du matin.</p>
+    <p class="sub">Quiz de fans sur les jeux et les films. Choisis ta nuit&nbsp;: 15 questions par nuit, de minuit à 6 h du matin.</p>
 
     <!-- Pour ajouter un quiz : copier un bloc <li>, changer le lien, le numéro et les textes,
          puis créer le dossier quiz-4/ avec son index.html. -->
@@ -113,6 +114,22 @@
           <span class="tile">3</span>
           <span class="txt"><span class="name">Troisième nuit</span>
             <span class="desc">Sister Location, Security Breach, spin-offs et film.</span></span>
+          <span class="go">Jouer</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="play" href="quiz-4/">
+          <span class="tile">4</span>
+          <span class="txt"><span class="name">Quatrième nuit</span>
+            <span class="desc">Films, romans, DLC et marionnettes : pour les vrais fans.</span></span>
+          <span class="go">Jouer</span>
+        </a>
+      </li>
+      <li class="item">
+        <a class="play" href="quiz-5/">
+          <span class="tile">5</span>
+          <span class="txt"><span class="name">Cinquième nuit</span>
+            <span class="desc">La dernière : caméras, musique, romans et détails de fans.</span></span>
           <span class="go">Jouer</span>
         </a>
       </li>
