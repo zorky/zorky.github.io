@@ -49,10 +49,10 @@ Un seul titre : « IT Manager, responsable de l'équipe développement », sous-
 ## Suite
 
 À faire :
-- [ ] Relire le rendu de `cv/index.html` en aperçu et en impression PDF (2 pages A4, pas de coupure de bloc).
-- [ ] Relancer l'analyse sur le site avec le CV exporté pour vérifier que les 5 remarques disparaissent.
-- [ ] Commiter (voir proposition de message dans la conversation). Rien n'est commité à ce jour.
-- [ ] Ajouter si possible un gain chiffré supplémentaire : délai d'une démarche avant/après, disponibilité en production, nombre de projets livrés.
+- [X] Relire le rendu de `cv/index.html` en aperçu et en impression PDF (2 pages A4, pas de coupure de bloc).
+- [X] Relancer l'analyse sur le site avec le CV exporté pour vérifier que les 5 remarques disparaissent.
+- [X] Commiter (voir proposition de message dans la conversation). Rien n'est commité à ce jour.
+- [X] Ajouter si possible un gain chiffré supplémentaire : délai d'une démarche avant/après, disponibilité en production, nombre de projets livrés.
 
 Questions ouvertes :
 - Gain de temps rattaché à ATER (×5) : fait. Le « 10 par jour au lieu de 2 » de la dématérialisation a été retiré.
